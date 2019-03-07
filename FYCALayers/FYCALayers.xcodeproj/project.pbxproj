@@ -1,0 +1,554 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EE6C4EE02230ED3E00756D55 /* FYAVplayerLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6C4EDE2230ED3E00756D55 /* FYAVplayerLayerViewController.m */; };
+		EE6C4EE12230ED3E00756D55 /* FYAVplayerLayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE6C4EDF2230ED3E00756D55 /* FYAVplayerLayerViewController.xib */; };
+		EE6C4EE32230ED9900756D55 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE6C4EE22230ED9900756D55 /* AVKit.framework */; };
+		EE6C4EE52230EDAD00756D55 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE6C4EE42230EDAD00756D55 /* AVFoundation.framework */; };
+		EE6C4EEB223103C600756D55 /* FYCAkeyFrameAnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6C4EE9223103C600756D55 /* FYCAkeyFrameAnimationViewController.m */; };
+		EE6C4EEC223103C600756D55 /* FYCAkeyFrameAnimationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE6C4EEA223103C600756D55 /* FYCAkeyFrameAnimationViewController.xib */; };
+		EE6C4EEE2231092600756D55 /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = EE6C4EED2231092600756D55 /* 10.png */; };
+		EE6C4EF32231150300756D55 /* CATransformEasyInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6C4EF12231150300756D55 /* CATransformEasyInViewController.m */; };
+		EE6C4EF42231150300756D55 /* CATransformEasyInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE6C4EF22231150300756D55 /* CATransformEasyInViewController.xib */; };
+		EEC04485222F73D6001DC2C8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC04484222F73D6001DC2C8 /* AppDelegate.m */; };
+		EEC04488222F73D6001DC2C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC04487222F73D6001DC2C8 /* ViewController.m */; };
+		EEC0448B222F73D6001DC2C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEC04489222F73D6001DC2C8 /* Main.storyboard */; };
+		EEC0448D222F73D7001DC2C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEC0448C222F73D7001DC2C8 /* Assets.xcassets */; };
+		EEC04490222F73D7001DC2C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEC0448E222F73D7001DC2C8 /* LaunchScreen.storyboard */; };
+		EEC04493222F73D7001DC2C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC04492222F73D7001DC2C8 /* main.m */; };
+		EEC0449C222F745A001DC2C8 /* FYItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC0449A222F745A001DC2C8 /* FYItemCollectionViewCell.m */; };
+		EEC0449D222F745A001DC2C8 /* FYItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC0449B222F745A001DC2C8 /* FYItemCollectionViewCell.xib */; };
+		EEC044A2222F7628001DC2C8 /* FYCaShapeLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC044A0222F7628001DC2C8 /* FYCaShapeLayerViewController.m */; };
+		EEC044A3222F7628001DC2C8 /* FYCaShapeLayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC044A1222F7628001DC2C8 /* FYCaShapeLayerViewController.xib */; };
+		EEC044A7222FA924001DC2C8 /* FYTextLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC044A6222FA924001DC2C8 /* FYTextLayerViewController.m */; };
+		EEC044AA222FACE1001DC2C8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EEC044A9222FACE1001DC2C8 /* CoreText.framework */; };
+		EEC044AF222FAFDA001DC2C8 /* FYCAtransformLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC044AD222FAFDA001DC2C8 /* FYCAtransformLayerViewController.m */; };
+		EEC044B0222FAFDA001DC2C8 /* FYCAtransformLayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC044AE222FAFDA001DC2C8 /* FYCAtransformLayerViewController.xib */; };
+		EEC044B5222FB3DE001DC2C8 /* FYCAGradientLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC044B3222FB3DE001DC2C8 /* FYCAGradientLayerViewController.m */; };
+		EEC044B6222FB3DE001DC2C8 /* FYCAGradientLayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC044B4222FB3DE001DC2C8 /* FYCAGradientLayerViewController.xib */; };
+		EEC044BB222FB901001DC2C8 /* FYReplicatorLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC044B9222FB901001DC2C8 /* FYReplicatorLayerViewController.m */; };
+		EEC044BC222FB901001DC2C8 /* FYReplicatorLayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC044BA222FB901001DC2C8 /* FYReplicatorLayerViewController.xib */; };
+		EEC044C3222FC75F001DC2C8 /* CAEmitterLayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EEC044C1222FC75F001DC2C8 /* CAEmitterLayerViewController.m */; };
+		EEC044C4222FC75F001DC2C8 /* CAEmitterLayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC044C2222FC75F001DC2C8 /* CAEmitterLayerViewController.xib */; };
+		EEC044C6222FC8D6001DC2C8 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = EEC044C5222FC8D6001DC2C8 /* 2.png */; };
+		EEC044CA222FCD4C001DC2C8 /* 11.png in Resources */ = {isa = PBXBuildFile; fileRef = EEC044C9222FCD4C001DC2C8 /* 11.png */; };
+		EEC044CE222FCFC8001DC2C8 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = EEC044CD222FCFC8001DC2C8 /* 3.png */; };
+		EEC044D1222FD0A6001DC2C8 /* 22.png in Resources */ = {isa = PBXBuildFile; fileRef = EEC044CF222FD0A5001DC2C8 /* 22.png */; };
+		EEC044D2222FD0A6001DC2C8 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = EEC044D0222FD0A6001DC2C8 /* 1.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EE6C4EDD2230ED3E00756D55 /* FYAVplayerLayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYAVplayerLayerViewController.h; sourceTree = "<group>"; };
+		EE6C4EDE2230ED3E00756D55 /* FYAVplayerLayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYAVplayerLayerViewController.m; sourceTree = "<group>"; };
+		EE6C4EDF2230ED3E00756D55 /* FYAVplayerLayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYAVplayerLayerViewController.xib; sourceTree = "<group>"; };
+		EE6C4EE22230ED9900756D55 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		EE6C4EE42230EDAD00756D55 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EE6C4EE8223103C600756D55 /* FYCAkeyFrameAnimationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYCAkeyFrameAnimationViewController.h; sourceTree = "<group>"; };
+		EE6C4EE9223103C600756D55 /* FYCAkeyFrameAnimationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYCAkeyFrameAnimationViewController.m; sourceTree = "<group>"; };
+		EE6C4EEA223103C600756D55 /* FYCAkeyFrameAnimationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYCAkeyFrameAnimationViewController.xib; sourceTree = "<group>"; };
+		EE6C4EED2231092600756D55 /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
+		EE6C4EF02231150300756D55 /* CATransformEasyInViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CATransformEasyInViewController.h; sourceTree = "<group>"; };
+		EE6C4EF12231150300756D55 /* CATransformEasyInViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CATransformEasyInViewController.m; sourceTree = "<group>"; };
+		EE6C4EF22231150300756D55 /* CATransformEasyInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CATransformEasyInViewController.xib; sourceTree = "<group>"; };
+		EEC04480222F73D6001DC2C8 /* FYCALayers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FYCALayers.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EEC04483222F73D6001DC2C8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		EEC04484222F73D6001DC2C8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		EEC04486222F73D6001DC2C8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		EEC04487222F73D6001DC2C8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		EEC0448A222F73D6001DC2C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EEC0448C222F73D7001DC2C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EEC0448F222F73D7001DC2C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EEC04491222F73D7001DC2C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEC04492222F73D7001DC2C8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		EEC04499222F745A001DC2C8 /* FYItemCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYItemCollectionViewCell.h; sourceTree = "<group>"; };
+		EEC0449A222F745A001DC2C8 /* FYItemCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYItemCollectionViewCell.m; sourceTree = "<group>"; };
+		EEC0449B222F745A001DC2C8 /* FYItemCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		EEC0449F222F7628001DC2C8 /* FYCaShapeLayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYCaShapeLayerViewController.h; sourceTree = "<group>"; };
+		EEC044A0222F7628001DC2C8 /* FYCaShapeLayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYCaShapeLayerViewController.m; sourceTree = "<group>"; };
+		EEC044A1222F7628001DC2C8 /* FYCaShapeLayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYCaShapeLayerViewController.xib; sourceTree = "<group>"; };
+		EEC044A5222FA924001DC2C8 /* FYTextLayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYTextLayerViewController.h; sourceTree = "<group>"; };
+		EEC044A6222FA924001DC2C8 /* FYTextLayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYTextLayerViewController.m; sourceTree = "<group>"; };
+		EEC044A9222FACE1001DC2C8 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		EEC044AC222FAFDA001DC2C8 /* FYCAtransformLayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYCAtransformLayerViewController.h; sourceTree = "<group>"; };
+		EEC044AD222FAFDA001DC2C8 /* FYCAtransformLayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYCAtransformLayerViewController.m; sourceTree = "<group>"; };
+		EEC044AE222FAFDA001DC2C8 /* FYCAtransformLayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYCAtransformLayerViewController.xib; sourceTree = "<group>"; };
+		EEC044B2222FB3DE001DC2C8 /* FYCAGradientLayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYCAGradientLayerViewController.h; sourceTree = "<group>"; };
+		EEC044B3222FB3DE001DC2C8 /* FYCAGradientLayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYCAGradientLayerViewController.m; sourceTree = "<group>"; };
+		EEC044B4222FB3DE001DC2C8 /* FYCAGradientLayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYCAGradientLayerViewController.xib; sourceTree = "<group>"; };
+		EEC044B8222FB901001DC2C8 /* FYReplicatorLayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYReplicatorLayerViewController.h; sourceTree = "<group>"; };
+		EEC044B9222FB901001DC2C8 /* FYReplicatorLayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYReplicatorLayerViewController.m; sourceTree = "<group>"; };
+		EEC044BA222FB901001DC2C8 /* FYReplicatorLayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FYReplicatorLayerViewController.xib; sourceTree = "<group>"; };
+		EEC044C0222FC75F001DC2C8 /* CAEmitterLayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CAEmitterLayerViewController.h; sourceTree = "<group>"; };
+		EEC044C1222FC75F001DC2C8 /* CAEmitterLayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CAEmitterLayerViewController.m; sourceTree = "<group>"; };
+		EEC044C2222FC75F001DC2C8 /* CAEmitterLayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CAEmitterLayerViewController.xib; sourceTree = "<group>"; };
+		EEC044C5222FC8D6001DC2C8 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		EEC044C9222FCD4C001DC2C8 /* 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 11.png; path = ../../../../Documents/11.png; sourceTree = "<group>"; };
+		EEC044CD222FCFC8001DC2C8 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		EEC044CF222FD0A5001DC2C8 /* 22.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 22.png; sourceTree = "<group>"; };
+		EEC044D0222FD0A6001DC2C8 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EEC0447D222F73D6001DC2C8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE6C4EE52230EDAD00756D55 /* AVFoundation.framework in Frameworks */,
+				EE6C4EE32230ED9900756D55 /* AVKit.framework in Frameworks */,
+				EEC044AA222FACE1001DC2C8 /* CoreText.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EE6C4EDC2230ED2200756D55 /* AVPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				EE6C4EDD2230ED3E00756D55 /* FYAVplayerLayerViewController.h */,
+				EE6C4EDE2230ED3E00756D55 /* FYAVplayerLayerViewController.m */,
+				EE6C4EDF2230ED3E00756D55 /* FYAVplayerLayerViewController.xib */,
+			);
+			path = AVPlayer;
+			sourceTree = "<group>";
+		};
+		EE6C4EE7223103A600756D55 /* CAkeyFrameAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				EE6C4EE8223103C600756D55 /* FYCAkeyFrameAnimationViewController.h */,
+				EE6C4EE9223103C600756D55 /* FYCAkeyFrameAnimationViewController.m */,
+				EE6C4EEA223103C600756D55 /* FYCAkeyFrameAnimationViewController.xib */,
+			);
+			path = CAkeyFrameAnimation;
+			sourceTree = "<group>";
+		};
+		EE6C4EEF223114CD00756D55 /* CATransformEasyIn */ = {
+			isa = PBXGroup;
+			children = (
+				EE6C4EF02231150300756D55 /* CATransformEasyInViewController.h */,
+				EE6C4EF12231150300756D55 /* CATransformEasyInViewController.m */,
+				EE6C4EF22231150300756D55 /* CATransformEasyInViewController.xib */,
+			);
+			path = CATransformEasyIn;
+			sourceTree = "<group>";
+		};
+		EEC04477222F73D6001DC2C8 = {
+			isa = PBXGroup;
+			children = (
+				EEC044D0222FD0A6001DC2C8 /* 1.png */,
+				EEC044CF222FD0A5001DC2C8 /* 22.png */,
+				EEC044C5222FC8D6001DC2C8 /* 2.png */,
+				EEC044C9222FCD4C001DC2C8 /* 11.png */,
+				EEC044CD222FCFC8001DC2C8 /* 3.png */,
+				EE6C4EED2231092600756D55 /* 10.png */,
+				EEC04482222F73D6001DC2C8 /* FYCALayers */,
+				EEC04481222F73D6001DC2C8 /* Products */,
+				EEC044A8222FACE1001DC2C8 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EEC04481222F73D6001DC2C8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EEC04480222F73D6001DC2C8 /* FYCALayers.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EEC04482222F73D6001DC2C8 /* FYCALayers */ = {
+			isa = PBXGroup;
+			children = (
+				EE6C4EEF223114CD00756D55 /* CATransformEasyIn */,
+				EE6C4EE7223103A600756D55 /* CAkeyFrameAnimation */,
+				EE6C4EDC2230ED2200756D55 /* AVPlayer */,
+				EEC044BF222FC74E001DC2C8 /* CAEmitterLayer */,
+				EEC044B7222FB8F1001DC2C8 /* CAReplicatorLayer */,
+				EEC044B1222FB3CA001DC2C8 /* CAGradientLayer */,
+				EEC044AB222FAFBE001DC2C8 /* CATransformLayer */,
+				EEC044A4222FA910001DC2C8 /* CATextLayer */,
+				EEC0449E222F7610001DC2C8 /* CAShapeLayr */,
+				EEC04483222F73D6001DC2C8 /* AppDelegate.h */,
+				EEC04484222F73D6001DC2C8 /* AppDelegate.m */,
+				EEC04486222F73D6001DC2C8 /* ViewController.h */,
+				EEC04487222F73D6001DC2C8 /* ViewController.m */,
+				EEC04499222F745A001DC2C8 /* FYItemCollectionViewCell.h */,
+				EEC0449A222F745A001DC2C8 /* FYItemCollectionViewCell.m */,
+				EEC0449B222F745A001DC2C8 /* FYItemCollectionViewCell.xib */,
+				EEC04489222F73D6001DC2C8 /* Main.storyboard */,
+				EEC0448C222F73D7001DC2C8 /* Assets.xcassets */,
+				EEC0448E222F73D7001DC2C8 /* LaunchScreen.storyboard */,
+				EEC04491222F73D7001DC2C8 /* Info.plist */,
+				EEC04492222F73D7001DC2C8 /* main.m */,
+			);
+			path = FYCALayers;
+			sourceTree = "<group>";
+		};
+		EEC0449E222F7610001DC2C8 /* CAShapeLayr */ = {
+			isa = PBXGroup;
+			children = (
+				EEC0449F222F7628001DC2C8 /* FYCaShapeLayerViewController.h */,
+				EEC044A0222F7628001DC2C8 /* FYCaShapeLayerViewController.m */,
+				EEC044A1222F7628001DC2C8 /* FYCaShapeLayerViewController.xib */,
+			);
+			path = CAShapeLayr;
+			sourceTree = "<group>";
+		};
+		EEC044A4222FA910001DC2C8 /* CATextLayer */ = {
+			isa = PBXGroup;
+			children = (
+				EEC044A5222FA924001DC2C8 /* FYTextLayerViewController.h */,
+				EEC044A6222FA924001DC2C8 /* FYTextLayerViewController.m */,
+			);
+			path = CATextLayer;
+			sourceTree = "<group>";
+		};
+		EEC044A8222FACE1001DC2C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE6C4EE42230EDAD00756D55 /* AVFoundation.framework */,
+				EE6C4EE22230ED9900756D55 /* AVKit.framework */,
+				EEC044A9222FACE1001DC2C8 /* CoreText.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EEC044AB222FAFBE001DC2C8 /* CATransformLayer */ = {
+			isa = PBXGroup;
+			children = (
+				EEC044AC222FAFDA001DC2C8 /* FYCAtransformLayerViewController.h */,
+				EEC044AD222FAFDA001DC2C8 /* FYCAtransformLayerViewController.m */,
+				EEC044AE222FAFDA001DC2C8 /* FYCAtransformLayerViewController.xib */,
+			);
+			path = CATransformLayer;
+			sourceTree = "<group>";
+		};
+		EEC044B1222FB3CA001DC2C8 /* CAGradientLayer */ = {
+			isa = PBXGroup;
+			children = (
+				EEC044B2222FB3DE001DC2C8 /* FYCAGradientLayerViewController.h */,
+				EEC044B3222FB3DE001DC2C8 /* FYCAGradientLayerViewController.m */,
+				EEC044B4222FB3DE001DC2C8 /* FYCAGradientLayerViewController.xib */,
+			);
+			path = CAGradientLayer;
+			sourceTree = "<group>";
+		};
+		EEC044B7222FB8F1001DC2C8 /* CAReplicatorLayer */ = {
+			isa = PBXGroup;
+			children = (
+				EEC044B8222FB901001DC2C8 /* FYReplicatorLayerViewController.h */,
+				EEC044B9222FB901001DC2C8 /* FYReplicatorLayerViewController.m */,
+				EEC044BA222FB901001DC2C8 /* FYReplicatorLayerViewController.xib */,
+			);
+			path = CAReplicatorLayer;
+			sourceTree = "<group>";
+		};
+		EEC044BF222FC74E001DC2C8 /* CAEmitterLayer */ = {
+			isa = PBXGroup;
+			children = (
+				EEC044C0222FC75F001DC2C8 /* CAEmitterLayerViewController.h */,
+				EEC044C1222FC75F001DC2C8 /* CAEmitterLayerViewController.m */,
+				EEC044C2222FC75F001DC2C8 /* CAEmitterLayerViewController.xib */,
+			);
+			path = CAEmitterLayer;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EEC0447F222F73D6001DC2C8 /* FYCALayers */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEC04496222F73D7001DC2C8 /* Build configuration list for PBXNativeTarget "FYCALayers" */;
+			buildPhases = (
+				EEC0447C222F73D6001DC2C8 /* Sources */,
+				EEC0447D222F73D6001DC2C8 /* Frameworks */,
+				EEC0447E222F73D6001DC2C8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FYCALayers;
+			productName = FYCALayers;
+			productReference = EEC04480222F73D6001DC2C8 /* FYCALayers.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EEC04478222F73D6001DC2C8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = www.fgyong.cn;
+				TargetAttributes = {
+					EEC0447F222F73D6001DC2C8 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = EEC0447B222F73D6001DC2C8 /* Build configuration list for PBXProject "FYCALayers" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EEC04477222F73D6001DC2C8;
+			productRefGroup = EEC04481222F73D6001DC2C8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EEC0447F222F73D6001DC2C8 /* FYCALayers */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EEC0447E222F73D6001DC2C8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEC044D1222FD0A6001DC2C8 /* 22.png in Resources */,
+				EEC044CA222FCD4C001DC2C8 /* 11.png in Resources */,
+				EEC04490222F73D7001DC2C8 /* LaunchScreen.storyboard in Resources */,
+				EEC044A3222F7628001DC2C8 /* FYCaShapeLayerViewController.xib in Resources */,
+				EE6C4EF42231150300756D55 /* CATransformEasyInViewController.xib in Resources */,
+				EEC0448D222F73D7001DC2C8 /* Assets.xcassets in Resources */,
+				EEC0449D222F745A001DC2C8 /* FYItemCollectionViewCell.xib in Resources */,
+				EE6C4EEE2231092600756D55 /* 10.png in Resources */,
+				EEC044CE222FCFC8001DC2C8 /* 3.png in Resources */,
+				EEC044C4222FC75F001DC2C8 /* CAEmitterLayerViewController.xib in Resources */,
+				EEC044BC222FB901001DC2C8 /* FYReplicatorLayerViewController.xib in Resources */,
+				EE6C4EE12230ED3E00756D55 /* FYAVplayerLayerViewController.xib in Resources */,
+				EEC044B0222FAFDA001DC2C8 /* FYCAtransformLayerViewController.xib in Resources */,
+				EEC0448B222F73D6001DC2C8 /* Main.storyboard in Resources */,
+				EEC044B6222FB3DE001DC2C8 /* FYCAGradientLayerViewController.xib in Resources */,
+				EEC044C6222FC8D6001DC2C8 /* 2.png in Resources */,
+				EE6C4EEC223103C600756D55 /* FYCAkeyFrameAnimationViewController.xib in Resources */,
+				EEC044D2222FD0A6001DC2C8 /* 1.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EEC0447C222F73D6001DC2C8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EEC04488222F73D6001DC2C8 /* ViewController.m in Sources */,
+				EEC044BB222FB901001DC2C8 /* FYReplicatorLayerViewController.m in Sources */,
+				EE6C4EEB223103C600756D55 /* FYCAkeyFrameAnimationViewController.m in Sources */,
+				EEC04493222F73D7001DC2C8 /* main.m in Sources */,
+				EE6C4EE02230ED3E00756D55 /* FYAVplayerLayerViewController.m in Sources */,
+				EE6C4EF32231150300756D55 /* CATransformEasyInViewController.m in Sources */,
+				EEC0449C222F745A001DC2C8 /* FYItemCollectionViewCell.m in Sources */,
+				EEC044B5222FB3DE001DC2C8 /* FYCAGradientLayerViewController.m in Sources */,
+				EEC04485222F73D6001DC2C8 /* AppDelegate.m in Sources */,
+				EEC044A7222FA924001DC2C8 /* FYTextLayerViewController.m in Sources */,
+				EEC044C3222FC75F001DC2C8 /* CAEmitterLayerViewController.m in Sources */,
+				EEC044AF222FAFDA001DC2C8 /* FYCAtransformLayerViewController.m in Sources */,
+				EEC044A2222F7628001DC2C8 /* FYCaShapeLayerViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EEC04489222F73D6001DC2C8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEC0448A222F73D6001DC2C8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EEC0448E222F73D7001DC2C8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EEC0448F222F73D7001DC2C8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EEC04494222F73D7001DC2C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		EEC04495222F73D7001DC2C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EEC04497222F73D7001DC2C8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B4ENM74X68;
+				INFOPLIST_FILE = FYCALayers/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = FY.FYCALayers;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EEC04498222F73D7001DC2C8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B4ENM74X68;
+				INFOPLIST_FILE = FYCALayers/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = FY.FYCALayers;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EEC0447B222F73D6001DC2C8 /* Build configuration list for PBXProject "FYCALayers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEC04494222F73D7001DC2C8 /* Debug */,
+				EEC04495222F73D7001DC2C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EEC04496222F73D7001DC2C8 /* Build configuration list for PBXNativeTarget "FYCALayers" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EEC04497222F73D7001DC2C8 /* Debug */,
+				EEC04498222F73D7001DC2C8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EEC04478222F73D6001DC2C8 /* Project object */;
+}
