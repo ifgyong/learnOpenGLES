@@ -33,7 +33,7 @@
     self.collectionView.collectionViewLayout = layout;
     self.dataSource=@[@"FYCaShapeLayer",@"FYTextLayer",@"FYCAtransformLayer",
                       @"FYCAGradientLayer",@"FYReplicatorLayer",@"CAEmitterLayer",
-                      @"FYAVplayerLayer",@"FYCAkeyFrameAnimation"];
+                      @"FYAVplayerLayer",@"FYCAkeyFrameAnimation",@"CATransformEasyIn"];
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.dataSource.count;
