@@ -19,8 +19,14 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 - (IBAction)push:(UIButton *)sender {
-    FYGLKViewController *view=[[FYGLKViewController alloc]init];
-    [self.navigationController pushViewController:view animated:YES];
+    if (sender.tag == 0) {
+        FYGLKViewController *view=[[FYGLKViewController alloc]init];
+        [self.navigationController pushViewController:view animated:YES];
+    }else if (sender.tag == 1){
+        FYLineViewController *line=[[FYLineViewController alloc]init];
+        [self.navigationController pushViewController:line animated:YES];
+    }
+   
 }
 
 

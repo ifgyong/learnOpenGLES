@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FYLineViewController.h"
 
 @interface ViewController : UIViewController
 

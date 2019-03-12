@@ -17,6 +17,7 @@
 		EE6C4FA02237718300756D55 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE6C4F9F2237718300756D55 /* GLKit.framework */; };
 		EE6C4FA22237718A00756D55 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE6C4FA12237718A00756D55 /* OpenGLES.framework */; };
 		EE6C4FA62237727100756D55 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = EE6C4FA52237727000756D55 /* 1.png */; };
+		EE6C4FB52237A04800756D55 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EE6C4FB42237A04800756D55 /* 2.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		EE6C4F9F2237718300756D55 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		EE6C4FA12237718A00756D55 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		EE6C4FA52237727000756D55 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		EE6C4FB42237A04800756D55 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				EE6C4FA52237727000756D55 /* 1.png */,
+				EE6C4FB42237A04800756D55 /* 2.jpg */,
 				EE6C4F852237713D00756D55 /* AppDelegate.h */,
 				EE6C4F862237713D00756D55 /* AppDelegate.m */,
 				EE6C4F882237713D00756D55 /* ViewController.h */,
@@ -154,6 +157,7 @@
 			files = (
 				EE6C4F922237713F00756D55 /* LaunchScreen.storyboard in Resources */,
 				EE6C4FA62237727100756D55 /* 1.png in Resources */,
+				EE6C4FB52237A04800756D55 /* 2.jpg in Resources */,
 				EE6C4F8F2237713F00756D55 /* Assets.xcassets in Resources */,
 				EE6C4F8D2237713D00756D55 /* Main.storyboard in Resources */,
 			);
