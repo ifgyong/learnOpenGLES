@@ -24,6 +24,7 @@
 		EE88E1122238D49C00F9704A /* vertexchange.glsl in Resources */ = {isa = PBXBuildFile; fileRef = EE88E1112238D49C00F9704A /* vertexchange.glsl */; };
 		EE88E1152238D4EC00F9704A /* FYGLKViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = EE88E1132238D4EC00F9704A /* FYGLKViewController3.m */; };
 		EE88E1172238D5C800F9704A /* f2.glsl in Resources */ = {isa = PBXBuildFile; fileRef = EE88E1162238D5C800F9704A /* f2.glsl */; };
+		EE88E11E2238FD5200F9704A /* FYGLKViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = EE88E11D2238FD5100F9704A /* FYGLKViewController4.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,8 @@
 		EE88E1132238D4EC00F9704A /* FYGLKViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYGLKViewController3.m; sourceTree = "<group>"; };
 		EE88E1142238D4EC00F9704A /* FYGLKViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYGLKViewController3.h; sourceTree = "<group>"; };
 		EE88E1162238D5C800F9704A /* f2.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = f2.glsl; sourceTree = "<group>"; };
+		EE88E11D2238FD5100F9704A /* FYGLKViewController4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYGLKViewController4.m; sourceTree = "<group>"; };
+		EE88E11F2238FD5C00F9704A /* FYGLKViewController4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYGLKViewController4.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,17 +95,19 @@
 				EE6C4F862237713D00756D55 /* AppDelegate.m */,
 				EE6C4F882237713D00756D55 /* ViewController.h */,
 				EE6C4F892237713D00756D55 /* ViewController.m */,
+				EE6C4F8B2237713D00756D55 /* Main.storyboard */,
 				EE6C4F9C2237717400756D55 /* FYGLKViewController.h */,
 				EE6C4F9B2237717300756D55 /* FYGLKViewController.m */,
 				EE88E10822389C7A00F9704A /* FYGLKViewController2.h */,
 				EE88E10722389C7A00F9704A /* FYGLKViewController2.m */,
 				EE88E1142238D4EC00F9704A /* FYGLKViewController3.h */,
 				EE88E1132238D4EC00F9704A /* FYGLKViewController3.m */,
+				EE88E11F2238FD5C00F9704A /* FYGLKViewController4.h */,
+				EE88E11D2238FD5100F9704A /* FYGLKViewController4.m */,
 				EE88E10D2238AA4400F9704A /* vertex.glsl */,
 				EE88E1112238D49C00F9704A /* vertexchange.glsl */,
 				EE88E10F2238AF6000F9704A /* f.glsl */,
 				EE88E1162238D5C800F9704A /* f2.glsl */,
-				EE6C4F8B2237713D00756D55 /* Main.storyboard */,
 				EE6C4F8E2237713F00756D55 /* Assets.xcassets */,
 				EE6C4F902237713F00756D55 /* LaunchScreen.storyboard */,
 				EE6C4F932237713F00756D55 /* Info.plist */,
@@ -199,6 +204,7 @@
 				EE88E1152238D4EC00F9704A /* FYGLKViewController3.m in Sources */,
 				EE88E10922389C7A00F9704A /* FYGLKViewController2.m in Sources */,
 				EE6C4F9D2237717400756D55 /* FYGLKViewController.m in Sources */,
+				EE88E11E2238FD5200F9704A /* FYGLKViewController4.m in Sources */,
 				EE6C4F8A2237713D00756D55 /* ViewController.m in Sources */,
 				EE6C4F952237713F00756D55 /* main.m in Sources */,
 				EE6C4F872237713D00756D55 /* AppDelegate.m in Sources */,

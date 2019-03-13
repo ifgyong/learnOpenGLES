@@ -10,12 +10,11 @@
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>
 #import <QuartzCore/QuartzCore.h>
-#import "FYGLKViewController4.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FYGLKViewController : GLKViewController
+@interface FYGLKViewController4 : GLKViewController
 
 @end
 

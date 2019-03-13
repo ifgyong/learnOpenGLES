@@ -10,6 +10,8 @@
 #import "FYGLKViewController2.h"
 #import "FYGLKViewController.h"
 #import "FYGLKViewController3.h"
+#import "FYGLKViewController4.h"
+
 @interface ViewController ()
 
 @end
@@ -34,6 +36,9 @@
         FYGLKViewController3 *view=[[FYGLKViewController3 alloc]init];
         [self.navigationController pushViewController:view
                                              animated:YES];
+    }else if (sender.tag == 3){
+        FYGLKViewController4 *vc=[FYGLKViewController4 new];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 
 }

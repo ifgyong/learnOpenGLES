@@ -68,11 +68,8 @@ static const SceneVertex2 vertices2[] = {
     self.baseEffect.constantColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
     
 //    [self uploadTexture];
-    //生成标示1个标识
     glGenBuffers(1, &vertexBufferID);
-    //绑定缓存  GL_ARRAY_BUFFER 顶点属性的图形 GL_ELEMENT_ARRAY_BUFFER其他类型的图形
     glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
-    //赋值缓存到缓存中
     glBufferData(GL_ARRAY_BUFFER,//初始化 buffer
                  sizeof(vertices2),//内存大小
                  vertices2,//数据赋值

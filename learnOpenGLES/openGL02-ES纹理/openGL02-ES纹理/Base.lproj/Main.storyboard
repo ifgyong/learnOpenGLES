@@ -70,15 +70,29 @@
                                     <action selector="push:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0OC-Ji-mNW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NTu-Tb-Tx8">
+                                <rect key="frame" x="137.5" y="164" width="100" height="50"/>
+                                <color key="backgroundColor" red="0.65490196079999996" green="0.65490196079999996" blue="0.65490196079999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="4op-5f-I0X"/>
+                                    <constraint firstAttribute="width" constant="100" id="XCc-rE-b5I"/>
+                                </constraints>
+                                <state key="normal" title="矩形变换"/>
+                                <connections>
+                                    <action selector="push:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dpb-yL-gB4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="NTu-Tb-Tx8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0Gi-Bn-SdA"/>
                             <constraint firstItem="29c-7J-4Du" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AHx-lP-cIq"/>
                             <constraint firstItem="29c-7J-4Du" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DBh-fe-nrM"/>
                             <constraint firstItem="83n-or-wgO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KXZ-He-nGc"/>
                             <constraint firstItem="29c-7J-4Du" firstAttribute="top" secondItem="gfX-uZ-0M2" secondAttribute="bottom" constant="23.5" id="Qw3-wb-FGL"/>
                             <constraint firstItem="83n-or-wgO" firstAttribute="top" secondItem="29c-7J-4Du" secondAttribute="bottom" constant="18.5" id="agj-Ki-Bz5"/>
                             <constraint firstItem="gfX-uZ-0M2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i4m-uq-4q7"/>
+                            <constraint firstItem="gfX-uZ-0M2" firstAttribute="top" secondItem="NTu-Tb-Tx8" secondAttribute="bottom" constant="21" id="nWe-O1-DS3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
