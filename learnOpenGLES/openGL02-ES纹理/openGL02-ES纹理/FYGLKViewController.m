@@ -115,14 +115,7 @@ static const SceneVertex2 vertices2[] = {
     [self.baseEffect prepareToDraw];//
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);//清除背景
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-
-    
-    //一共4个点 为 0 1 2 3。
-    // GL_TRIANGLE_STRIP 模式下 0 1 2 3,4个点，构成 012,123,2个三角形 组成的图案。 每连续3个点构成三角形 ，所有三角形加一起组成总的图案。
-    // GL_TRIANGLE_FAN 是012,023一共2个三角形，index为0和连续两个点组成2个三角形，这两个三角形组成总图案。
-//GL_TRIANGLES 每3个数据为一组，0-2为一个三角形 3-5为一个三角形。
     glDrawArrays(GL_TRIANGLES, 0/*顶点的位置*/, 6/*顶点数量*/);
-    //3个顶点 画了1个三角形 组成的一个长方形
 }
 - (void)uploadTexture{
     UIImage *image=[UIImage imageNamed:@"2.jpg"];

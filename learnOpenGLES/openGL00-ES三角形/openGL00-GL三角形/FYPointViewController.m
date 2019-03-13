@@ -1,16 +1,16 @@
 //
-//  FYLineViewController.m
+//  FYPointViewController.m
 //  openGL00-GL三角形
 //
-//  Created by Charlie on 2019/3/12.
+//  Created by Charlie on 2019/3/13.
 //  Copyright © 2019年 www.fgyong.cn. All rights reserved.
 //
 
-#import "FYLineViewController.h"
+#import "FYPointViewController.h"
 typedef struct {
     GLKVector2 positionCoords;
 }ScenVertex;
-@interface FYLineViewController (){
+@interface FYPointViewController (){
     GLuint vertexBufferID;
 }
 @property (nonatomic) GLKBaseEffect *baseEffect;
@@ -20,12 +20,12 @@ static const ScenVertex vertices[]= {
     {{ -.70f,  .70f}},
     {{ .70f,  .70f}},  // ↖
     {{ .70f,  -.70f}},
-//    {{0.5f,   -0.5f}},                // ↘
-//    {{ 0.5f,   0.5f}}                    //↗
+    //    {{0.5f,   -0.5f}},                // ↘
+    //    {{ 0.5f,   0.5f}}                    //↗
     
 };
 static GLuint indexArray[]= {0,1,2,3};
-@implementation FYLineViewController
+@implementation FYPointViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -57,7 +57,7 @@ static GLuint indexArray[]= {0,1,2,3};
     
     
 }
-- (void)viewDidUnload{
+- (void)dealloc{
     GLKView *view=(GLKView *)self.view;
     NSAssert([view isKindOfClass:[GLKView class]], @"view 不是GLKView");
     [EAGLContext setCurrentContext:view.context];
@@ -94,7 +94,8 @@ static GLuint indexArray[]= {0,1,2,3};
     glDrawArrays(GL_LINE_LOOP, 0/*顶点的位置*/, 4/*顶点数量*/);
     glLineWidth(100);
     
-//    glDrawElements(GL_LINES, 4, GL_UNSIGNED_SHORT, indexArray);
+    //    glDrawElements(GL_LINES, 4, GL_UNSIGNED_SHORT, indexArray);
     //3个顶点 画了1个三角形 组成的一个长方形
 }
+
 @end

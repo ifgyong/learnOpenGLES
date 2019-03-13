@@ -15,6 +15,7 @@
 		EE6C4F6F22374CC700756D55 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6C4F6E22374CC700756D55 /* main.m */; };
 		EE6C4F7722374D1A00756D55 /* FYGLKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6C4F7622374D1A00756D55 /* FYGLKViewController.m */; };
 		EE88E1002237A93400F9704A /* FYLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE88E0FF2237A93400F9704A /* FYLineViewController.m */; };
+		EE88E10622388BC100F9704A /* FYPointViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE88E10422388BC100F9704A /* FYPointViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		EE6C4F7622374D1A00756D55 /* FYGLKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYGLKViewController.m; sourceTree = "<group>"; };
 		EE88E0FE2237A93400F9704A /* FYLineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYLineViewController.h; sourceTree = "<group>"; };
 		EE88E0FF2237A93400F9704A /* FYLineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYLineViewController.m; sourceTree = "<group>"; };
+		EE88E10422388BC100F9704A /* FYPointViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYPointViewController.m; sourceTree = "<group>"; };
+		EE88E10522388BC100F9704A /* FYPointViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYPointViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,8 @@
 				EE6C4F7622374D1A00756D55 /* FYGLKViewController.m */,
 				EE88E0FE2237A93400F9704A /* FYLineViewController.h */,
 				EE88E0FF2237A93400F9704A /* FYLineViewController.m */,
+				EE88E10522388BC100F9704A /* FYPointViewController.h */,
+				EE88E10422388BC100F9704A /* FYPointViewController.m */,
 				EE6C4F6822374CC700756D55 /* Assets.xcassets */,
 				EE6C4F6A22374CC700756D55 /* LaunchScreen.storyboard */,
 				EE6C4F6D22374CC700756D55 /* Info.plist */,
@@ -151,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE88E10622388BC100F9704A /* FYPointViewController.m in Sources */,
 				EE88E1002237A93400F9704A /* FYLineViewController.m in Sources */,
 				EE6C4F7722374D1A00756D55 /* FYGLKViewController.m in Sources */,
 				EE6C4F6422374CC700756D55 /* ViewController.m in Sources */,

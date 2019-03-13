@@ -25,6 +25,9 @@
     }else if (sender.tag == 1){
         FYLineViewController *line=[[FYLineViewController alloc]init];
         [self.navigationController pushViewController:line animated:YES];
+    }else if (sender.tag == 2){
+        FYPointViewController *point=[[FYPointViewController alloc]init];
+        [self.navigationController pushViewController:point animated:YES];
     }
    
 }

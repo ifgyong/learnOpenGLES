@@ -7,7 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "FYGLKViewController2.h"
 #import "FYGLKViewController.h"
+#import "FYGLKViewController3.h"
 @interface ViewController ()
 
 @end
@@ -20,9 +22,20 @@
 }
 
 - (IBAction)push:(UIButton *)sender {
-    FYGLKViewController *view=[[FYGLKViewController alloc]init];
-    [self.navigationController pushViewController:view
-                                         animated:YES];
+    if (sender.tag == 0) {
+        FYGLKViewController *view=[[FYGLKViewController alloc]init];
+        [self.navigationController pushViewController:view
+                                             animated:YES];
+    }else if(sender.tag == 1) {
+        FYGLKViewController2 *view=[[FYGLKViewController2 alloc]init];
+        [self.navigationController pushViewController:view
+                                             animated:YES];
+    }else if (sender.tag == 2){
+        FYGLKViewController3 *view=[[FYGLKViewController3 alloc]init];
+        [self.navigationController pushViewController:view
+                                             animated:YES];
+    }
+
 }
 
 @end

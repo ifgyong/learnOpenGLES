@@ -18,6 +18,12 @@
 		EE6C4FA22237718A00756D55 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE6C4FA12237718A00756D55 /* OpenGLES.framework */; };
 		EE6C4FA62237727100756D55 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = EE6C4FA52237727000756D55 /* 1.png */; };
 		EE6C4FB52237A04800756D55 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EE6C4FB42237A04800756D55 /* 2.jpg */; };
+		EE88E10922389C7A00F9704A /* FYGLKViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = EE88E10722389C7A00F9704A /* FYGLKViewController2.m */; };
+		EE88E10E2238AA4400F9704A /* vertex.glsl in Resources */ = {isa = PBXBuildFile; fileRef = EE88E10D2238AA4400F9704A /* vertex.glsl */; };
+		EE88E1102238AF6000F9704A /* f.glsl in Resources */ = {isa = PBXBuildFile; fileRef = EE88E10F2238AF6000F9704A /* f.glsl */; };
+		EE88E1122238D49C00F9704A /* vertexchange.glsl in Resources */ = {isa = PBXBuildFile; fileRef = EE88E1112238D49C00F9704A /* vertexchange.glsl */; };
+		EE88E1152238D4EC00F9704A /* FYGLKViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = EE88E1132238D4EC00F9704A /* FYGLKViewController3.m */; };
+		EE88E1172238D5C800F9704A /* f2.glsl in Resources */ = {isa = PBXBuildFile; fileRef = EE88E1162238D5C800F9704A /* f2.glsl */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,14 @@
 		EE6C4FA12237718A00756D55 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		EE6C4FA52237727000756D55 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		EE6C4FB42237A04800756D55 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		EE88E10722389C7A00F9704A /* FYGLKViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYGLKViewController2.m; sourceTree = "<group>"; };
+		EE88E10822389C7A00F9704A /* FYGLKViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYGLKViewController2.h; sourceTree = "<group>"; };
+		EE88E10D2238AA4400F9704A /* vertex.glsl */ = {isa = PBXFileReference; lastKnownFileType = text; path = vertex.glsl; sourceTree = "<group>"; };
+		EE88E10F2238AF6000F9704A /* f.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = f.glsl; sourceTree = "<group>"; };
+		EE88E1112238D49C00F9704A /* vertexchange.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertexchange.glsl; sourceTree = "<group>"; };
+		EE88E1132238D4EC00F9704A /* FYGLKViewController3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYGLKViewController3.m; sourceTree = "<group>"; };
+		EE88E1142238D4EC00F9704A /* FYGLKViewController3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYGLKViewController3.h; sourceTree = "<group>"; };
+		EE88E1162238D5C800F9704A /* f2.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = f2.glsl; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +94,14 @@
 				EE6C4F892237713D00756D55 /* ViewController.m */,
 				EE6C4F9C2237717400756D55 /* FYGLKViewController.h */,
 				EE6C4F9B2237717300756D55 /* FYGLKViewController.m */,
+				EE88E10822389C7A00F9704A /* FYGLKViewController2.h */,
+				EE88E10722389C7A00F9704A /* FYGLKViewController2.m */,
+				EE88E1142238D4EC00F9704A /* FYGLKViewController3.h */,
+				EE88E1132238D4EC00F9704A /* FYGLKViewController3.m */,
+				EE88E10D2238AA4400F9704A /* vertex.glsl */,
+				EE88E1112238D49C00F9704A /* vertexchange.glsl */,
+				EE88E10F2238AF6000F9704A /* f.glsl */,
+				EE88E1162238D5C800F9704A /* f2.glsl */,
 				EE6C4F8B2237713D00756D55 /* Main.storyboard */,
 				EE6C4F8E2237713F00756D55 /* Assets.xcassets */,
 				EE6C4F902237713F00756D55 /* LaunchScreen.storyboard */,
@@ -155,9 +177,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE88E1172238D5C800F9704A /* f2.glsl in Resources */,
 				EE6C4F922237713F00756D55 /* LaunchScreen.storyboard in Resources */,
+				EE88E1102238AF6000F9704A /* f.glsl in Resources */,
 				EE6C4FA62237727100756D55 /* 1.png in Resources */,
 				EE6C4FB52237A04800756D55 /* 2.jpg in Resources */,
+				EE88E10E2238AA4400F9704A /* vertex.glsl in Resources */,
+				EE88E1122238D49C00F9704A /* vertexchange.glsl in Resources */,
 				EE6C4F8F2237713F00756D55 /* Assets.xcassets in Resources */,
 				EE6C4F8D2237713D00756D55 /* Main.storyboard in Resources */,
 			);
@@ -170,6 +196,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE88E1152238D4EC00F9704A /* FYGLKViewController3.m in Sources */,
+				EE88E10922389C7A00F9704A /* FYGLKViewController2.m in Sources */,
 				EE6C4F9D2237717400756D55 /* FYGLKViewController.m in Sources */,
 				EE6C4F8A2237713D00756D55 /* ViewController.m in Sources */,
 				EE6C4F952237713F00756D55 /* main.m in Sources */,

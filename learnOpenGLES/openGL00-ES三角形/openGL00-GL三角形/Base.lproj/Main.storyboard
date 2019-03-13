@@ -42,11 +42,25 @@
                                     <action selector="push:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4iz-ox-7wU"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcx-id-6Ig">
+                                <rect key="frame" x="137.5" y="243" width="100" height="50"/>
+                                <color key="backgroundColor" red="0.80784313730000001" green="0.80000000000000004" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="03S-WR-zgq"/>
+                                    <constraint firstAttribute="width" constant="100" id="faU-vk-drU"/>
+                                </constraints>
+                                <state key="normal" title="point"/>
+                                <connections>
+                                    <action selector="push:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NBH-e0-EGG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Qcx-id-6Ig" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="05X-zf-1aT"/>
                             <constraint firstItem="RO1-Ch-gXZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="7OB-3Z-A9v"/>
                             <constraint firstItem="RO1-Ch-gXZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Aib-3L-2wM"/>
+                            <constraint firstItem="RO1-Ch-gXZ" firstAttribute="top" secondItem="Qcx-id-6Ig" secondAttribute="bottom" constant="15.5" id="MQM-1P-d7w"/>
                             <constraint firstItem="2rT-ab-shQ" firstAttribute="top" secondItem="RO1-Ch-gXZ" secondAttribute="bottom" constant="27.5" id="X6h-1j-QFo"/>
                             <constraint firstItem="2rT-ab-shQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="a5J-UE-kro"/>
                         </constraints>

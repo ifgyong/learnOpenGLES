@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "FYLineViewController.h"
+#import "FYPointViewController.h"
 
 @interface ViewController : UIViewController
 
