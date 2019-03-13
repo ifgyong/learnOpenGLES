@@ -29,10 +29,9 @@ static const SceneVertex2 vertices2[] = {
     {{-0.5, 0.5, 0.0f},{1.0f,1.0f,0.0f,1.0f},   {.0,1.0f}}, //左上
 
     {{-0.5, -0.5, 0.0f},{1.0f,.0f,1.0f,1.0f},   {0.0,.0f}}, //左下 白色
-    {{0.5, -0.5, 0.0f},{1.0f,1.0f,1.0f,1.0f},   {1.0,.0f}}, //右下
+    {{0.5, -0.5, 0.0f},{.0f,1.0f,1.0f,1.0f},   {1.0,.0f}}, //右下
     {{0, 0, 0.0f},{0.0f,.0f,.0f,1.0f},          {0.5f,0.5f}}, //中间顶点
 };
-
 @interface FYGLKViewController4 (){
     GLuint vertexBufferID;
     GLuint program;
@@ -56,6 +55,7 @@ static const SceneVertex2 vertices2[] = {
         glDeleteBuffers(1, &vertexBufferID);
         vertexBufferID = 0;
     }
+    self.baseEffect = nil;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -116,8 +116,8 @@ static const SceneVertex2 vertices2[] = {
     
 //    glUseProgram(program);
     
-    GLuint transformUniformLocation = glGetUniformLocation(program, "change");
-    glUniformMatrix4fv(transformUniformLocation, 1, 0, transformMatrix.m);
+//    GLuint transformUniformLocation = glGetUniformLocation(program, "change");
+//    glUniformMatrix4fv(transformUniformLocation, 1, 0, transformMatrix.m);
 
     [self draw];
 }
@@ -154,6 +154,7 @@ static const SceneVertex2 vertices2[] = {
     self.baseEffect.texture2d0.enabled = GL_TRUE;
     self.baseEffect.texture2d0.name= info.name;
     self.baseEffect.texture2d0.target = info.target;
+//    self.baseEffect.texture2d0.envMode = GLKTextureEnvModeModulate;
     
 }
 /**

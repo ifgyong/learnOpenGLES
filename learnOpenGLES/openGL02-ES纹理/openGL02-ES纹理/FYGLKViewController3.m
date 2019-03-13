@@ -22,18 +22,21 @@ typedef struct {
 }SceneVertex2;
 //矩形的六个顶点
 static const SceneVertex2 vertices2[] = {
-    {{0.7, -0.7, 0.0f,},{1.0f,1.0f,1.0f,1.0f}}, //右下
-    {{0.7, 0.7,  0.0f},{1.0f,.0f,1.0f,1.0f}}, //右上
-    {{-0.7, 0.7, 0.0f},{1.0f,1.0f,0/255.0f,1.0f}}, //左上
+    {{0.7, -0.7, 0.0f},{1.0f, 0.0f, 1.0f,1.0f}}, //右下
+    {{0.7, 0.7,  0.0f},{1.0f, 0.0f, 1.0f,1.0f}}, //右上
+    {{-0.7, 0.7, 0.0f},{1.0f, 1.0f, 0.0f,1.0f}}, //左上
     
-    {{0.7, -0.7, 0.0f},{1.0f,1.0f,1.0f,1.0f}}, //右下
-    {{-0.7, 0.7, 0.0f},{1.0f,1.0f,0/255.0f,1.0f}}, //左上
-    {{-0.7, -0.7, 0.0f},{1.0f,.0f,1.0f,1.0f}}, //左下 白色
+    {{0.7, -0.7, 0.0f},{1.0f, 0.0f, 1.0f,1.0f}}, //右下
+    {{-0.7, 0.7, 0.0f},{1.0f, 1.0f, 0.0f,1.0f}}, //左上
+    {{-0.7, -0.7, 0.0f},{1.0f,0.0f, 1.0f,1.0f}}, //左下 白色
 };
 
 @interface FYGLKViewController3 (){
     GLuint vertexBufferID;
     GLuint program;
+    
+    GLuint _color;
+    GLuint _p;
 }
 
 @property (nonatomic) GLKBaseEffect *baseEffect;
@@ -83,8 +86,10 @@ static const SceneVertex2 vertices2[] = {
  创建着色器并链接到坐标上
  */
 - (void)compileShader{
-    GLuint certex=[self compileShader:@"vertexchange" withType:GL_VERTEX_SHADER];
-    GLuint fragmentShader=[self compileShader:@"f2" withType:GL_FRAGMENT_SHADER];
+    GLuint certex=[self compileShader:@"vertexchange2"
+                             withType:GL_VERTEX_SHADER];
+    GLuint fragmentShader=[self compileShader:@"f2"
+                                     withType:GL_FRAGMENT_SHADER];
     GLuint programHandle= glCreateProgram();
     program = programHandle;
     glAttachShader(programHandle, certex);
@@ -104,32 +109,46 @@ static const SceneVertex2 vertices2[] = {
         exit(1);
     }
     glUseProgram(programHandle);
-    glGetAttribLocation(programHandle, "Position");
+    _p      = glGetAttribLocation(program, "Position");
+    _color  = glGetAttribLocation(program, "SourceColor");
+    
+    
+
 }
 -(void)glkView:(GLKView *)view drawInRect:(CGRect)rect{
     [self.baseEffect prepareToDraw];//
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);//清除背景
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-    glUseProgram(program);
-    [self update];
+//    [self update];
+//    int vertexColorLocation = glGetUniformLocation(program, "ourColor");
+//    glUniform4f(vertexColorLocation, 0.0f, 1.0f, 0.0f, 1.0f);
     [self draw];
+    // 更新uniform颜色
+
+//    float timeValue = sin(arc4random()%10/3.3f);
+//    float greenValue = sin(timeValue) / 2.0f + 0.5f;
+
 }
 - (void)setup{
-
+    
     //启用顶点缓存渲染操作
-    glEnableVertexAttribArray(GLKVertexAttribPosition);
+//    glEnableVertexAttribArray(GLKVertexAttribPosition);
     //3是步长  每3个数字是一组数据 GL_FLOAT是数据类型 GL_FALSE小数位置是否可变
     //   sizeof(ScenVertex)是每一组数据的内存长度 NULL是从当前顶点开始
-    glVertexAttribPointer(GLKVertexAttribPosition,
+    glVertexAttribPointer(_p,
                           3,
                           GL_FLOAT, GL_FALSE,
                           sizeof(SceneVertex2),
-                          NULL + offsetof(SceneVertex2, positionCoords));//NULL从当前绑定的顶点缓存的开始位置访问顶点数据
+                          NULL + offsetof(SceneVertex2, positionCoords));
+    glEnableVertexAttribArray(_p);
+
     
-    //
-    glEnableVertexAttribArray(GLKVertexAttribColor);
-    glVertexAttribPointer(GLKVertexAttribColor, 4, GL_FLOAT, GL_FALSE, sizeof(SceneVertex2), NULL+offsetof(SceneVertex2, textureCoords));
-    
+    glVertexAttribPointer(_color,
+                          4, GL_FLOAT, GL_FALSE,
+                          sizeof(SceneVertex2),
+                          NULL+offsetof(SceneVertex2, positionCoords));
+    glEnableVertexAttribArray(_color);
+
 }
 - (void)update{
     //更新改变的value
@@ -137,52 +156,20 @@ static const SceneVertex2 vertices2[] = {
     if (self.changeValue > M_PI) {
         self.changeValue = self.changeValue - M_PI;
     }
-    GLuint variable= glGetUniformLocation(program, "change");
-    glUniform1f(variable,(CGFloat)self.changeValue);
+//    GLuint variable= glGetUniformLocation(program, "change");
+    
+//    glUniform1f(variable,(CGFloat)self.changeValue);
 }
 - (void)draw{
     //给shader的全局变量传值计算出来frame
-    GLuint color= glGetUniformLocation(program, "color");
-    float ss =sin(self.changeValue);
-    float cc = cos(self.changeValue);
-    float tt = 1 - cc;
-    glUniform4f(color, ss, cc, tt, 1.0f);
+//    GLuint color= glGetUniformLocation(program, "color");
+//    float ss =sin(self.changeValue);
+//    float cc = cos(self.changeValue);
+//    float tt = 1 - cc;
+//    glUniform4f(color, ss, cc, tt, 1.0f);
     //绘图
     GLuint count = sizeof(vertices2)/sizeof(SceneVertex2);
     glDrawArrays(GL_TRIANGLES,0, count);
 }
-/**
- 读取着色器文件
- @param shaderName name
- @param shaderType 类型
- @return 着色器
- */
-- (GLuint)compileShader:(NSString *)shaderName withType:(GLenum)shaderType {
-    NSString *path=[[NSBundle mainBundle] pathForResource:shaderName
-                                                   ofType:@"glsl"];
-    NSError *error= nil;
-    NSString *shaderString =[NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
-    if (error) {
-        NSLog(@"%@",error);
-        exit(1);
-    }
-    
-    GLuint shader= glCreateShader(shaderType);
-    const char * shaderStringUTF8=[shaderString UTF8String];
-    int stringLength = (int)strlen(shaderStringUTF8);
-    glShaderSource(shader,1, &shaderStringUTF8, &stringLength);
-    glCompileShader(shader);
-    
-    GLint compilSuccess;
-    glGetShaderiv(shader, GL_COMPILE_STATUS, &compilSuccess);
-    if (compilSuccess == GL_FALSE) {
-        GLchar message [256];
-        NSString *message_OC=[NSString stringWithUTF8String:message];
-        NSLog(@"%@",message_OC);
-        exit(1);
-    }
-    return shader;
-}
-
 
 @end

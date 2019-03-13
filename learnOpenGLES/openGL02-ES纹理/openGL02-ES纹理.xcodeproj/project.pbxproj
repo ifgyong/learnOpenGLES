@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5A826D0223935E300482A81 /* vertexchange2.glsl in Resources */ = {isa = PBXBuildFile; fileRef = A5A826CF223935E200482A81 /* vertexchange2.glsl */; };
 		EE6C4F872237713D00756D55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6C4F862237713D00756D55 /* AppDelegate.m */; };
 		EE6C4F8A2237713D00756D55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6C4F892237713D00756D55 /* ViewController.m */; };
 		EE6C4F8D2237713D00756D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE6C4F8B2237713D00756D55 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A5A826CF223935E200482A81 /* vertexchange2.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertexchange2.glsl; sourceTree = "<group>"; };
 		EE6C4F822237713D00756D55 /* openGL02-ES纹理.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "openGL02-ES纹理.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE6C4F852237713D00756D55 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EE6C4F862237713D00756D55 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				EE88E11D2238FD5100F9704A /* FYGLKViewController4.m */,
 				EE88E10D2238AA4400F9704A /* vertex.glsl */,
 				EE88E1112238D49C00F9704A /* vertexchange.glsl */,
+				A5A826CF223935E200482A81 /* vertexchange2.glsl */,
 				EE88E10F2238AF6000F9704A /* f.glsl */,
 				EE88E1162238D5C800F9704A /* f2.glsl */,
 				EE6C4F8E2237713F00756D55 /* Assets.xcassets */,
@@ -193,6 +196,7 @@
 				EE6C4FA62237727100756D55 /* 1.png in Resources */,
 				EE6C4FB52237A04800756D55 /* 2.jpg in Resources */,
 				EE88E10E2238AA4400F9704A /* vertex.glsl in Resources */,
+				A5A826D0223935E300482A81 /* vertexchange2.glsl in Resources */,
 				EE88E1122238D49C00F9704A /* vertexchange.glsl in Resources */,
 				EE6C4F8F2237713F00756D55 /* Assets.xcassets in Resources */,
 				EE6C4F8D2237713D00756D55 /* Main.storyboard in Resources */,
