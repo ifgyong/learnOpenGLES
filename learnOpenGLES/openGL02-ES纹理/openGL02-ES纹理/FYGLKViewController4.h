@@ -10,7 +10,7 @@
 #import <OpenGLES/ES2/gl.h>
 #import <OpenGLES/ES2/glext.h>
 #import <QuartzCore/QuartzCore.h>
-
+#import "NSObject+FY.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

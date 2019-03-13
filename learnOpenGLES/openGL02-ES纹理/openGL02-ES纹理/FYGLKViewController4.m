@@ -19,7 +19,7 @@
 typedef struct {
     GLKVector3 positionCoords;  //点坐标
     GLKVector4 textureCoords;   //纹理 图片或者 颜色RGBA(Red,Ggreen,black,alpha)
-    GLKVector2 vector;
+    GLKVector2 vector;          //贴图 对应的坐标
 }SceneVertex2;
 //矩形的六个顶点
 static const SceneVertex2 vertices2[] = {
@@ -27,7 +27,7 @@ static const SceneVertex2 vertices2[] = {
     {{0.5, 0.5,  0.0f},{1.0f,.0f,1.0f,1.0f},    {1.0,1.0f}}, //右上
     {{0, 0, 0.0f},{0.0f,.0f,.0f,1.0f},          {0.5f,.5f}}, //中间顶点
     {{-0.5, 0.5, 0.0f},{1.0f,1.0f,0.0f,1.0f},   {.0,1.0f}}, //左上
-    
+
     {{-0.5, -0.5, 0.0f},{1.0f,.0f,1.0f,1.0f},   {0.0,.0f}}, //左下 白色
     {{0.5, -0.5, 0.0f},{1.0f,1.0f,1.0f,1.0f},   {1.0,.0f}}, //右下
     {{0, 0, 0.0f},{0.0f,.0f,.0f,1.0f},          {0.5f,0.5f}}, //中间顶点
@@ -36,6 +36,11 @@ static const SceneVertex2 vertices2[] = {
 @interface FYGLKViewController4 (){
     GLuint vertexBufferID;
     GLuint program;
+    
+    GLKMatrix4 transformMatrix;
+    
+    float value;
+    
 }
 
 @property (nonatomic) GLKBaseEffect *baseEffect;
@@ -54,7 +59,6 @@ static const SceneVertex2 vertices2[] = {
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     
     GLKView *view=(GLKView *)self.view;
     NSAssert([view isKindOfClass:[GLKView class]], @"view 不是GLKView");
@@ -81,6 +85,8 @@ static const SceneVertex2 vertices2[] = {
                  GL_STATIC_DRAW);//GPU 内存
     [self setup];
     [self uploadTexture];
+    
+    transformMatrix = GLKMatrix4Identity;
 }
 - (void)setup{
     
@@ -106,9 +112,33 @@ static const SceneVertex2 vertices2[] = {
     [self.baseEffect prepareToDraw];//
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);//清除背景
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);    
+    
+    
+//    glUseProgram(program);
+    
+    GLuint transformUniformLocation = glGetUniformLocation(program, "change");
+    glUniformMatrix4fv(transformUniformLocation, 1, 0, transformMatrix.m);
+
     [self draw];
 }
-
+- (void)update{
+    value += 0.1;
+    if (value > 1) {
+        value -= 1;
+    }
+    // 旋转
+//    GLKMatrix4 rotateMatrix = GLKMatrix4MakeRotation(value , 0, 0, 0.0);
+    
+    // 平移
+//    GLKMatrix4 translateMatrix = GLKMatrix4MakeTranslation(0, 0, -3.0);
+    
+    // 透视投影
+    float aspect = self.view.frame.size.width / self.view.frame.size.height;
+    GLKMatrix4 perspectiveMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(90), aspect, 0.1, 20.0);
+    // GLKMathDegreesToRadians(90) 是将角度转为弧度
+    transformMatrix = perspectiveMatrix;
+    //    translateMatrix = GLKMatrix4Multiply(perspectiveMatrix, translateMatrix);
+}
 - (void)draw{
     //渲染
     GLuint count = sizeof(vertices2)/sizeof(SceneVertex2);
@@ -125,5 +155,32 @@ static const SceneVertex2 vertices2[] = {
     self.baseEffect.texture2d0.name= info.name;
     self.baseEffect.texture2d0.target = info.target;
     
+}
+/**
+ 创建着色器并链接到坐标上
+ */
+- (void)compileShader{
+    GLuint certex=[self compileShader:@"vertexchange" withType:GL_VERTEX_SHADER];
+    GLuint fragmentShader=[self compileShader:@"f2" withType:GL_FRAGMENT_SHADER];
+    GLuint programHandle= glCreateProgram();
+    program = programHandle;
+    glAttachShader(programHandle, certex);
+    glAttachShader(programHandle, fragmentShader);
+    
+    glLinkProgram(programHandle);
+    
+    glDeleteShader(certex);
+    glDeleteShader(fragmentShader);
+    
+    GLint linksuccess;
+    glGetProgramiv(programHandle, GL_LINK_STATUS, &linksuccess);
+    if (linksuccess == GL_FALSE) {
+        GLchar messages[256];
+        NSString *messageString = [NSString stringWithUTF8String:messages];
+        NSLog(@"着色器程序:%@", messageString);
+        exit(1);
+    }
+    glUseProgram(programHandle);
+    glGetAttribLocation(programHandle, "Position");
 }
 @end

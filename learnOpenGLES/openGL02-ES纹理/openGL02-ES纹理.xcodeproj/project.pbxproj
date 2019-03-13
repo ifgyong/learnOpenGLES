@@ -25,6 +25,7 @@
 		EE88E1152238D4EC00F9704A /* FYGLKViewController3.m in Sources */ = {isa = PBXBuildFile; fileRef = EE88E1132238D4EC00F9704A /* FYGLKViewController3.m */; };
 		EE88E1172238D5C800F9704A /* f2.glsl in Resources */ = {isa = PBXBuildFile; fileRef = EE88E1162238D5C800F9704A /* f2.glsl */; };
 		EE88E11E2238FD5200F9704A /* FYGLKViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = EE88E11D2238FD5100F9704A /* FYGLKViewController4.m */; };
+		EE88E1222239094B00F9704A /* NSObject+FY.m in Sources */ = {isa = PBXBuildFile; fileRef = EE88E1212239094B00F9704A /* NSObject+FY.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,8 @@
 		EE88E1162238D5C800F9704A /* f2.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = f2.glsl; sourceTree = "<group>"; };
 		EE88E11D2238FD5100F9704A /* FYGLKViewController4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYGLKViewController4.m; sourceTree = "<group>"; };
 		EE88E11F2238FD5C00F9704A /* FYGLKViewController4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYGLKViewController4.h; sourceTree = "<group>"; };
+		EE88E1202239094B00F9704A /* NSObject+FY.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+FY.h"; sourceTree = "<group>"; };
+		EE88E1212239094B00F9704A /* NSObject+FY.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FY.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +100,8 @@
 				EE6C4F892237713D00756D55 /* ViewController.m */,
 				EE6C4F8B2237713D00756D55 /* Main.storyboard */,
 				EE6C4F9C2237717400756D55 /* FYGLKViewController.h */,
+				EE88E1202239094B00F9704A /* NSObject+FY.h */,
+				EE88E1212239094B00F9704A /* NSObject+FY.m */,
 				EE6C4F9B2237717300756D55 /* FYGLKViewController.m */,
 				EE88E10822389C7A00F9704A /* FYGLKViewController2.h */,
 				EE88E10722389C7A00F9704A /* FYGLKViewController2.m */,
@@ -203,6 +208,7 @@
 			files = (
 				EE88E1152238D4EC00F9704A /* FYGLKViewController3.m in Sources */,
 				EE88E10922389C7A00F9704A /* FYGLKViewController2.m in Sources */,
+				EE88E1222239094B00F9704A /* NSObject+FY.m in Sources */,
 				EE6C4F9D2237717400756D55 /* FYGLKViewController.m in Sources */,
 				EE88E11E2238FD5200F9704A /* FYGLKViewController4.m in Sources */,
 				EE6C4F8A2237713D00756D55 /* ViewController.m in Sources */,
