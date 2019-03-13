@@ -94,7 +94,9 @@ static const SceneVertex2 vertices2[] = {
     program = programHandle;
     glAttachShader(programHandle, certex);
     glAttachShader(programHandle, fragmentShader);
-    
+//    定义的属性需要和系统的绑定一起  否则识别不了
+    glBindAttribLocation(programHandle, GLKVertexAttribPosition, "Position");
+    glBindAttribLocation(programHandle, GLKVertexAttribColor, "SourceColor");
     glLinkProgram(programHandle);
     
     glDeleteShader(certex);
@@ -109,6 +111,7 @@ static const SceneVertex2 vertices2[] = {
         exit(1);
     }
     glUseProgram(programHandle);
+    
     _p      = glGetAttribLocation(program, "Position");
     _color  = glGetAttribLocation(program, "SourceColor");
     
