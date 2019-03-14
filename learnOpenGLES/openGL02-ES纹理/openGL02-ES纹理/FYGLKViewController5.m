@@ -6,7 +6,7 @@
 //  Copyright © 2019年 www.fgyong.cn. All rights reserved.
 //
 
-#import "FYGLKViewController4.h"
+#import "FYGLKViewController5.h"
 #import "GLESUtils.h"
 #import "GLESMath.h"
 //
@@ -36,25 +36,32 @@
 #define c3  {.0f,1.0f,.0f,1.0f}//绿色
 #define c4  {1.0f,.0f,.0f,1.0f}//红色
 
-
+#define pp0 {p0,c0,w10}
+#define pp1 {p1,c1,w11}
+#define pp2 {p2,c2,w01}
+#define pp3 {p3,c3,w00}
+#define pp4 {p4,c4,w55}
 
 typedef struct {
     GLKVector3 positionCoords;  //点坐标
     GLKVector4 textureCoords;   //纹理 图片或者 颜色RGBA(Red,Ggreen,black,alpha)
     GLKVector2 vector;          //贴图 对应的坐标
 }SceneVertex2;
-static SceneVertex2 vertices2[5] = {
-    {p0,c0,w10},
-    {p1,c1,w11},
-    {p2,c2,w01},
-    {p3,c3,w00},
-    {p4,c4,w55}};
-@interface FYGLKViewController4 (){
+static SceneVertex2 vertices2[] = {
+    pp0,pp1,pp2,
+    pp2,pp3,pp0,
+    
+    pp4,pp0,pp1,
+    pp4,pp1,pp2,
+    pp4,pp2,pp3,
+    pp4,pp0,pp3,
+};
+@interface FYGLKViewController5 (){
     GLuint vertexBufferID;
     GLuint vertexBufferIDColor;
     GLuint program;
     
-    KSMatrix4 _transformMatrix;
+    GLKMatrix4 _transformMatrix;
     
     float value;
     
@@ -72,7 +79,7 @@ static SceneVertex2 vertices2[5] = {
 @property (nonatomic,assign) CGFloat changeValue;
 @end
 
-@implementation FYGLKViewController4
+@implementation FYGLKViewController5
 -(void)dealloc{
     [EAGLContext setCurrentContext:nil];
     if (vertexBufferID !=0) {
@@ -96,7 +103,7 @@ static SceneVertex2 vertices2[5] = {
     self.baseEffect.constantColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
     
     
-//    [self uploadTexture];
+    [self uploadTexture];
     //生成标示1个标识
     glGenBuffers(1, &vertexBufferID);
     glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
@@ -106,9 +113,8 @@ static SceneVertex2 vertices2[5] = {
                  GL_STATIC_DRAW);//GPU 内存
     
     self.changeValue = 1;
-    ksMatrixLoadIdentity(&_transformMatrix);//初始化
-
-    [self compileShader];
+    _transformMatrix = GLKMatrix4Identity;
+//    [self compileShader];
     [self uploadTexture];
     [self setup];
     
@@ -122,29 +128,29 @@ static SceneVertex2 vertices2[5] = {
     [self.view addSubview:btn];
     UIButton *btn2=[[UIButton alloc]initWithFrame:CGRectMake(150, 100, 100, 50)];
     [btn2 setTitle:@"Y" forState:0];
-    btn2.tag = 2;
+    btn2.tag = 1;
     [btn2 addTarget:self action:@selector(changeLocation:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn2];
     
     UIButton *btn3=[[UIButton alloc]initWithFrame:CGRectMake(300, 100, 100, 50)];
     [btn3 setTitle:@"Z" forState:0];
-    btn3.tag = 3;
+    btn3.tag = 2;
     [btn3 addTarget:self action:@selector(changeLocation:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn3];
 }
 - (void)setup{
     
     //启用顶点缓存渲染操作
-    glEnableVertexAttribArray(_p);
+    glEnableVertexAttribArray(GLKVertexAttribPosition);
     //顶点渲染
-    glVertexAttribPointer(_p,
+    glVertexAttribPointer(GLKVertexAttribPosition,
                           3,
                           GL_FLOAT, GL_FALSE,
                           sizeof(SceneVertex2),
                           NULL + offsetof(SceneVertex2, positionCoords));//NULL从当前绑定的顶点缓存的开始位置访问顶点数据
     //颜色
-    glEnableVertexAttribArray(_Color);
-    glVertexAttribPointer(_Color, 4, GL_FLOAT, GL_FALSE,
+    glEnableVertexAttribArray(GLKVertexAttribColor);
+    glVertexAttribPointer(GLKVertexAttribColor, 4, GL_FLOAT, GL_FALSE,
                           sizeof(SceneVertex2),
                           NULL+offsetof(SceneVertex2, textureCoords));
     //纹理渲染
@@ -155,46 +161,24 @@ static SceneVertex2 vertices2[5] = {
     [self.baseEffect prepareToDraw];//
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);//清除背景
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);    
-    
     [self update];
     [self draw];
 }
 - (void)update{
-    
-    glUseProgram(program); //声明使用的program
-    GLuint variable= glGetUniformLocation(program, "valueChange");
-    glUniform1f(variable,(CGFloat)self.changeValue);
-//    GLuint variable2= glGetUniformLocation(program, "SourceColor2");
-//    float s = sin(self.changeValue);
-//    glUniform4f(variable2, s, 1-s, fabsf(s-1), s);
-    
+    static float rotate = 0.05;
     if (is_rotate_x) {
-        ksRotate(&_transformMatrix, self.changeValue, 1, 0, 0);
-    }else if (is_rotate_y) {
-        ksRotate(&_transformMatrix, self.changeValue, 0, 0, 0);
-    }else if (is_rotate_z) {
-        ksRotate(&_transformMatrix, self.changeValue, 0, 0, 1);
+        _transformMatrix = GLKMatrix4Rotate(_transformMatrix, rotate, 0, 1, 0);
+    }else if (is_rotate_y){
+        _transformMatrix = GLKMatrix4Rotate(_transformMatrix, rotate, 1, 0, 0);
+    }else if (is_rotate_z){
+        _transformMatrix = GLKMatrix4Rotate(_transformMatrix, rotate, 0, 0, 1);
     }
-    //maritx
-    
-    GLuint mar = glGetUniformLocation(program, "maritx");
-    glUniformMatrix4fv(mar, 1, GL_FALSE,
-                       (GLfloat *)&_transformMatrix.m[0][0]);
-    
+    self.baseEffect.transform.modelviewMatrix = _transformMatrix;
 }
 - (void)draw{
-       static  int indexs[] = {
-           //底部
-           0,1,2,
-           0,2,3,
-           
-            0,1,4,
-            1,2,4,
-            2,3,4,
-            3,0,4,
-        };
-    GLint count = sizeof(indexs)/sizeof(int);
-    glDrawElements(GL_TRIANGLE_FAN, count, GL_UNSIGNED_INT, &indexs[0]);
+    GLint count = sizeof(vertices2)/sizeof(SceneVertex2);
+    glDrawArrays(GL_TRIANGLE_STRIP, 0, count);
+//    glDrawElements(GL_TRIANGLE_FAN, count, GL_UNSIGNED_BYTE, &indexs[0]);
 }
 - (void)uploadTexture{
     UIImage *image=[UIImage imageNamed:@"2.jpg"];
@@ -206,39 +190,8 @@ static SceneVertex2 vertices2[5] = {
     self.baseEffect.texture2d0.enabled = GL_TRUE;
     self.baseEffect.texture2d0.name= info.name;
     self.baseEffect.texture2d0.target = info.target;
-//    self.baseEffect.texture2d0.envMode = GLKTextureEnvModeModulate;
+    self.baseEffect.texture2d0.envMode = GLKTextureEnvModeModulate;
     
-}
-/**
- 创建着色器并链接到坐标上
- */
-- (void)compileShader{
-    GLuint certex=[self compileShader:kShaderVertexChangeName withType:GL_VERTEX_SHADER];
-    GLuint fragmentShader=[self compileShader:kShaderVertexFName withType:GL_FRAGMENT_SHADER];
-    GLuint programHandle= glCreateProgram();
-    program = programHandle;
-    glAttachShader(programHandle, certex);
-    glAttachShader(programHandle, fragmentShader);
-    glBindAttribLocation(programHandle, GLKVertexAttribPosition, "Position");
-    
-    glLinkProgram(programHandle);
-    
-    glDeleteShader(certex);
-    glDeleteShader(fragmentShader);
-    
-    GLint linksuccess;
-    glGetProgramiv(programHandle, GL_LINK_STATUS, &linksuccess);
-    if (linksuccess == GL_FALSE) {
-        GLchar messages[256];
-        NSString *messageString = [NSString stringWithUTF8String:messages];
-        NSLog(@"着色器程序:%@", messageString);
-        exit(1);
-    }
-    glUseProgram(programHandle);
-   _p = glGetAttribLocation(programHandle, "Position");
-    glEnableVertexAttribArray(_p);
-    _Color = glGetAttribLocation(programHandle, "SourceColor");
-    glEnableVertexAttribArray(_Color);
 }
 - (void)changeLocation:(UIButton *)sender{
     if (sender.tag == 0) {

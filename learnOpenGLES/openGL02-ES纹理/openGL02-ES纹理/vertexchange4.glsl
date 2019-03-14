@@ -12,7 +12,7 @@ varying lowp vec4 fColor;
 void main(){
     
     fColor = SourceColor;
-    float x = sin(valueChange);
+//    float x = sin(valueChange);
     
 //    gl_Position = vec4(-x + Position.x, Position.y - x,0, 1);
     gl_Position =   Position * maritx ;

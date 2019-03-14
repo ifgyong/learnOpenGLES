@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A5A826D0223935E300482A81 /* vertexchange2.glsl in Resources */ = {isa = PBXBuildFile; fileRef = A5A826CF223935E200482A81 /* vertexchange2.glsl */; };
 		EE491D8D223A15800061D8E8 /* vertexchange4.glsl in Resources */ = {isa = PBXBuildFile; fileRef = EE491D8C223A15800061D8E8 /* vertexchange4.glsl */; };
+		EE491D97223A49DF0061D8E8 /* FYGLKViewController5.m in Sources */ = {isa = PBXBuildFile; fileRef = EE491D95223A49DF0061D8E8 /* FYGLKViewController5.m */; };
 		EE6C4F872237713D00756D55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6C4F862237713D00756D55 /* AppDelegate.m */; };
 		EE6C4F8A2237713D00756D55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6C4F892237713D00756D55 /* ViewController.m */; };
 		EE6C4F8D2237713D00756D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE6C4F8B2237713D00756D55 /* Main.storyboard */; };
@@ -36,6 +37,8 @@
 		A5A826CF223935E200482A81 /* vertexchange2.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertexchange2.glsl; sourceTree = "<group>"; };
 		EE491D8A223A120F0061D8E8 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		EE491D8C223A15800061D8E8 /* vertexchange4.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertexchange4.glsl; sourceTree = "<group>"; };
+		EE491D95223A49DF0061D8E8 /* FYGLKViewController5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYGLKViewController5.m; sourceTree = "<group>"; };
+		EE491D96223A49DF0061D8E8 /* FYGLKViewController5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYGLKViewController5.h; sourceTree = "<group>"; };
 		EE6C4F822237713D00756D55 /* openGL02-ES纹理.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "openGL02-ES纹理.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE6C4F852237713D00756D55 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EE6C4F862237713D00756D55 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -123,6 +126,8 @@
 				EE88E1132238D4EC00F9704A /* FYGLKViewController3.m */,
 				EE88E11F2238FD5C00F9704A /* FYGLKViewController4.h */,
 				EE88E11D2238FD5100F9704A /* FYGLKViewController4.m */,
+				EE491D96223A49DF0061D8E8 /* FYGLKViewController5.h */,
+				EE491D95223A49DF0061D8E8 /* FYGLKViewController5.m */,
 				EE88E10D2238AA4400F9704A /* vertex.glsl */,
 				EE88E1112238D49C00F9704A /* vertexchange.glsl */,
 				A5A826CF223935E200482A81 /* vertexchange2.glsl */,
@@ -248,6 +253,7 @@
 				EE6C4F8A2237713D00756D55 /* ViewController.m in Sources */,
 				EE6C4F952237713F00756D55 /* main.m in Sources */,
 				EE6C4F872237713D00756D55 /* AppDelegate.m in Sources */,
+				EE491D97223A49DF0061D8E8 /* FYGLKViewController5.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
