@@ -14,6 +14,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ 利用ksMatrix4实行3D变换，shader写的
+ */
 @interface FYGLKViewController4 : GLKViewController
 
 @end

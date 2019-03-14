@@ -14,6 +14,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+/**
+ 利用effect 实行3D变换和 贴图。
+ */
 @interface FYGLKViewController5 : GLKViewController
 
 @end
