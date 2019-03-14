@@ -7,7 +7,8 @@
 //
 
 #import "FYGLKViewController3.h"
-
+#import "GLESMath.h"
+#import "GLESUtils.h"
 //
 //  ViewController.m
 //  OpenGL01-GL的正方形
@@ -37,6 +38,8 @@ static const SceneVertex2 vertices2[] = {
     
     GLuint _color;
     GLuint _p;
+    
+    KSMatrix4 _matrix4;
 }
 
 @property (nonatomic) GLKBaseEffect *baseEffect;
@@ -115,16 +118,13 @@ static const SceneVertex2 vertices2[] = {
     _p      = glGetAttribLocation(program, "Position");
     _color  = glGetAttribLocation(program, "SourceColor");
     
-    
 
 }
 -(void)glkView:(GLKView *)view drawInRect:(CGRect)rect{
     [self.baseEffect prepareToDraw];//
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);//清除背景
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
-//    [self update];
-//    int vertexColorLocation = glGetUniformLocation(program, "ourColor");
-//    glUniform4f(vertexColorLocation, 0.0f, 1.0f, 0.0f, 1.0f);
+    [self update];
     [self draw];
     // 更新uniform颜色
 
@@ -133,11 +133,6 @@ static const SceneVertex2 vertices2[] = {
 
 }
 - (void)setup{
-    
-    //启用顶点缓存渲染操作
-//    glEnableVertexAttribArray(GLKVertexAttribPosition);
-    //3是步长  每3个数字是一组数据 GL_FLOAT是数据类型 GL_FALSE小数位置是否可变
-    //   sizeof(ScenVertex)是每一组数据的内存长度 NULL是从当前顶点开始
     glVertexAttribPointer(_p,
                           3,
                           GL_FLOAT, GL_FALSE,
@@ -155,21 +150,26 @@ static const SceneVertex2 vertices2[] = {
 }
 - (void)update{
     //更新改变的value
-    self.changeValue = self.changeValue + 0.02;
-    if (self.changeValue > M_PI) {
-        self.changeValue = self.changeValue - M_PI;
-    }
-//    GLuint variable= glGetUniformLocation(program, "change");
+    self.changeValue = self.changeValue + 0.1;
+    glUseProgram(program); //声明使用的program
+    GLuint variable= glGetUniformLocation(program, "valueChange");
+    glUniform1f(variable,(CGFloat)self.changeValue);
+    GLuint variable2= glGetUniformLocation(program, "SourceColor2");
+    float s = sin(self.changeValue);
+    glUniform4f(variable2, s, 1-s, fabsf(s-1), s);
     
-//    glUniform1f(variable,(CGFloat)self.changeValue);
+    ksMatrixLoadIdentity(&_matrix4);//初始化
+    ksRotate(&_matrix4, self.changeValue, 0, 1, 0);
+    ksRotate(&_matrix4, self.changeValue, 1, 0, 0);
+    
+    //maritx
+    
+    GLuint mar = glGetUniformLocation(program, "maritx");
+    glUniformMatrix4fv(mar, 1, GL_FALSE,
+                       (GLfloat *)&_matrix4.m[0][0]);
+    
 }
 - (void)draw{
-    //给shader的全局变量传值计算出来frame
-//    GLuint color= glGetUniformLocation(program, "color");
-//    float ss =sin(self.changeValue);
-//    float cc = cos(self.changeValue);
-//    float tt = 1 - cc;
-//    glUniform4f(color, ss, cc, tt, 1.0f);
     //绘图
     GLuint count = sizeof(vertices2)/sizeof(SceneVertex2);
     glDrawArrays(GL_TRIANGLES,0, count);

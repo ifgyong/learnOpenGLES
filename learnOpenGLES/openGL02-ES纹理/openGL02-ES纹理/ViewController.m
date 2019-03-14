@@ -8,10 +8,9 @@
 
 #import "ViewController.h"
 #import "FYGLKViewController2.h"
-#import "FYGLKViewController.h"
 #import "FYGLKViewController3.h"
 #import "FYGLKViewController4.h"
-
+#import "FYGLKViewController.h"
 @interface ViewController ()
 
 @end

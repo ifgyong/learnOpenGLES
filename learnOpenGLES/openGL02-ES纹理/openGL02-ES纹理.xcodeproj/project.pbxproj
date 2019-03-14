@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A5A826D0223935E300482A81 /* vertexchange2.glsl in Resources */ = {isa = PBXBuildFile; fileRef = A5A826CF223935E200482A81 /* vertexchange2.glsl */; };
+		EE491D8D223A15800061D8E8 /* vertexchange4.glsl in Resources */ = {isa = PBXBuildFile; fileRef = EE491D8C223A15800061D8E8 /* vertexchange4.glsl */; };
 		EE6C4F872237713D00756D55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6C4F862237713D00756D55 /* AppDelegate.m */; };
 		EE6C4F8A2237713D00756D55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6C4F892237713D00756D55 /* ViewController.m */; };
 		EE6C4F8D2237713D00756D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE6C4F8B2237713D00756D55 /* Main.storyboard */; };
@@ -27,10 +28,14 @@
 		EE88E1172238D5C800F9704A /* f2.glsl in Resources */ = {isa = PBXBuildFile; fileRef = EE88E1162238D5C800F9704A /* f2.glsl */; };
 		EE88E11E2238FD5200F9704A /* FYGLKViewController4.m in Sources */ = {isa = PBXBuildFile; fileRef = EE88E11D2238FD5100F9704A /* FYGLKViewController4.m */; };
 		EE88E1222239094B00F9704A /* NSObject+FY.m in Sources */ = {isa = PBXBuildFile; fileRef = EE88E1212239094B00F9704A /* NSObject+FY.m */; };
+		EE88E12A2239E94300F9704A /* GLESUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = EE88E1242239E94300F9704A /* GLESUtils.m */; };
+		EE88E12B2239E94300F9704A /* GLESMath.c in Sources */ = {isa = PBXBuildFile; fileRef = EE88E1262239E94300F9704A /* GLESMath.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A5A826CF223935E200482A81 /* vertexchange2.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertexchange2.glsl; sourceTree = "<group>"; };
+		EE491D8A223A120F0061D8E8 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		EE491D8C223A15800061D8E8 /* vertexchange4.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertexchange4.glsl; sourceTree = "<group>"; };
 		EE6C4F822237713D00756D55 /* openGL02-ES纹理.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "openGL02-ES纹理.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE6C4F852237713D00756D55 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EE6C4F862237713D00756D55 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -59,6 +64,12 @@
 		EE88E11F2238FD5C00F9704A /* FYGLKViewController4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYGLKViewController4.h; sourceTree = "<group>"; };
 		EE88E1202239094B00F9704A /* NSObject+FY.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+FY.h"; sourceTree = "<group>"; };
 		EE88E1212239094B00F9704A /* NSObject+FY.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FY.m"; sourceTree = "<group>"; };
+		EE88E1242239E94300F9704A /* GLESUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLESUtils.m; sourceTree = "<group>"; };
+		EE88E1252239E94300F9704A /* Quaternion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quaternion.h; sourceTree = "<group>"; };
+		EE88E1262239E94300F9704A /* GLESMath.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = GLESMath.c; sourceTree = "<group>"; };
+		EE88E1272239E94300F9704A /* GLESUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESUtils.h; sourceTree = "<group>"; };
+		EE88E1282239E94300F9704A /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
+		EE88E1292239E94300F9704A /* GLESMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLESMath.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +105,7 @@
 		EE6C4F842237713D00756D55 /* openGL02-ES纹理 */ = {
 			isa = PBXGroup;
 			children = (
+				EE88E1232239E94300F9704A /* Utils */,
 				EE6C4FA52237727000756D55 /* 1.png */,
 				EE6C4FB42237A04800756D55 /* 2.jpg */,
 				EE6C4F852237713D00756D55 /* AppDelegate.h */,
@@ -114,6 +126,7 @@
 				EE88E10D2238AA4400F9704A /* vertex.glsl */,
 				EE88E1112238D49C00F9704A /* vertexchange.glsl */,
 				A5A826CF223935E200482A81 /* vertexchange2.glsl */,
+				EE491D8C223A15800061D8E8 /* vertexchange4.glsl */,
 				EE88E10F2238AF6000F9704A /* f.glsl */,
 				EE88E1162238D5C800F9704A /* f2.glsl */,
 				EE6C4F8E2237713F00756D55 /* Assets.xcassets */,
@@ -127,10 +140,24 @@
 		EE6C4F9E2237718300756D55 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EE491D8A223A120F0061D8E8 /* libc++.tbd */,
 				EE6C4FA12237718A00756D55 /* OpenGLES.framework */,
 				EE6C4F9F2237718300756D55 /* GLKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE88E1232239E94300F9704A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EE88E1272239E94300F9704A /* GLESUtils.h */,
+				EE88E1242239E94300F9704A /* GLESUtils.m */,
+				EE88E1252239E94300F9704A /* Quaternion.h */,
+				EE88E1282239E94300F9704A /* Vector.h */,
+				EE88E1292239E94300F9704A /* GLESMath.h */,
+				EE88E1262239E94300F9704A /* GLESMath.c */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +221,7 @@
 				EE6C4F922237713F00756D55 /* LaunchScreen.storyboard in Resources */,
 				EE88E1102238AF6000F9704A /* f.glsl in Resources */,
 				EE6C4FA62237727100756D55 /* 1.png in Resources */,
+				EE491D8D223A15800061D8E8 /* vertexchange4.glsl in Resources */,
 				EE6C4FB52237A04800756D55 /* 2.jpg in Resources */,
 				EE88E10E2238AA4400F9704A /* vertex.glsl in Resources */,
 				A5A826D0223935E300482A81 /* vertexchange2.glsl in Resources */,
@@ -211,6 +239,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE88E1152238D4EC00F9704A /* FYGLKViewController3.m in Sources */,
+				EE88E12A2239E94300F9704A /* GLESUtils.m in Sources */,
+				EE88E12B2239E94300F9704A /* GLESMath.c in Sources */,
 				EE88E10922389C7A00F9704A /* FYGLKViewController2.m in Sources */,
 				EE88E1222239094B00F9704A /* NSObject+FY.m in Sources */,
 				EE6C4F9D2237717400756D55 /* FYGLKViewController.m in Sources */,
@@ -359,10 +389,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PU5CP57746;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = "openGL02-ES纹理/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -377,10 +409,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PU5CP57746;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
 				INFOPLIST_FILE = "openGL02-ES纹理/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

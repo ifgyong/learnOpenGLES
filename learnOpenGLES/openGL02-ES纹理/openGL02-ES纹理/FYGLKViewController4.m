@@ -7,7 +7,8 @@
 //
 
 #import "FYGLKViewController4.h"
-
+#import "GLESUtils.h"
+#import "GLESMath.h"
 //
 //  ViewController.m
 //  OpenGL01-GL的正方形
@@ -15,30 +16,53 @@
 //  Created by Charlie on 2019/3/8.
 //  Copyright © 2019年 www.fgyong.cn. All rights reserved.
 //
+#define kShaderVertexChangeName @"vertexchange4"
+#define kShaderVertexFName @"f2"
+#define p0  {0.5, -0.5, 0.0f}
+#define p1  {0.5, 0.5,  0.0f}
+#define p2  {-0.5, 0.5, 0.0f}
+#define p3  {-0.5, -0.5, 0.0f}
+#define p4  {0,    0,   1.0f}
+
+#define w00  {0.0, 0.0}
+#define w01  {0.0, 1.0}
+#define w10  {1.0, 0.0}
+#define w11 {1.0, 1.0}
+#define w55  {0.5, 0.5}
+
+#define c0  {.0f,1.0f,1.0f,1.0f}//青色
+#define c1  {1.0f,.0f,1.0f,1.0f}//紫色
+#define c2  {.0f,1.0f,1.0f,1.0f}//青色
+#define c3  {.0f,1.0f,.0f,1.0f}//绿色
+#define c4  {1.0f,.0f,.0f,1.0f}//红色
+
+
 
 typedef struct {
     GLKVector3 positionCoords;  //点坐标
     GLKVector4 textureCoords;   //纹理 图片或者 颜色RGBA(Red,Ggreen,black,alpha)
     GLKVector2 vector;          //贴图 对应的坐标
 }SceneVertex2;
-//矩形的六个顶点
-static const SceneVertex2 vertices2[] = {
-    {{0.5, -0.5, 0.0f,},{1.0f,1.0f,1.0f,1.0f},  {1.0,.0f}}, //右下
-    {{0.5, 0.5,  0.0f},{1.0f,.0f,1.0f,1.0f},    {1.0,1.0f}}, //右上
-    {{0, 0, 0.0f},{0.0f,.0f,.0f,1.0f},          {0.5f,.5f}}, //中间顶点
-    {{-0.5, 0.5, 0.0f},{1.0f,1.0f,0.0f,1.0f},   {.0,1.0f}}, //左上
-
-    {{-0.5, -0.5, 0.0f},{1.0f,.0f,1.0f,1.0f},   {0.0,.0f}}, //左下 白色
-    {{0.5, -0.5, 0.0f},{.0f,1.0f,1.0f,1.0f},   {1.0,.0f}}, //右下
-    {{0, 0, 0.0f},{0.0f,.0f,.0f,1.0f},          {0.5f,0.5f}}, //中间顶点
-};
+static SceneVertex2 vertices2[5] = {
+    {p0,c0,w10},
+    {p1,c1,w11},
+    {p2,c2,w01},
+    {p3,c3,w00},
+    {p4,c4,w55}};
 @interface FYGLKViewController4 (){
     GLuint vertexBufferID;
+    GLuint vertexBufferIDColor;
     GLuint program;
     
-    GLKMatrix4 transformMatrix;
+    KSMatrix4 _transformMatrix;
     
     float value;
+    
+    GLint _p;
+    GLint _Color;
+    
+    BOOL is_rotate_x;
+    BOOL is_rotate_y;
     
 }
 
@@ -46,7 +70,6 @@ static const SceneVertex2 vertices2[] = {
 @property (nonatomic) CAEAGLLayer *eaglayer;
 @property (nonatomic,assign) CGFloat changeValue;
 @end
-
 
 @implementation FYGLKViewController4
 -(void)dealloc{
@@ -68,81 +91,102 @@ static const SceneVertex2 vertices2[] = {
     [EAGLContext setCurrentContext:view.context];
     self.baseEffect =[[GLKBaseEffect alloc]init];
     
-    
-    
     self.baseEffect.useConstantColor = GL_TRUE;
     self.baseEffect.constantColor = GLKVector4Make(1.0f, 1.0f, 1.0f, 1.0f);
+    
     
 //    [self uploadTexture];
     //生成标示1个标识
     glGenBuffers(1, &vertexBufferID);
-    //绑定缓存  GL_ARRAY_BUFFER 顶点属性的图形 GL_ELEMENT_ARRAY_BUFFER其他类型的图形
     glBindBuffer(GL_ARRAY_BUFFER, vertexBufferID);
-    //赋值缓存到缓存中
     glBufferData(GL_ARRAY_BUFFER,//初始化 buffer
                  sizeof(vertices2),//内存大小
                  vertices2,//数据赋值
                  GL_STATIC_DRAW);//GPU 内存
-    [self setup];
-    [self uploadTexture];
     
-    transformMatrix = GLKMatrix4Identity;
+    self.changeValue = 1;
+    ksMatrixLoadIdentity(&_transformMatrix);//初始化
+
+    [self compileShader];
+    [self uploadTexture];
+    [self setup];
+    
+    
+    [self addButtons];
+}
+- (void)addButtons{
+    UIButton *btn=[[UIButton alloc]initWithFrame:CGRectMake(0, 100, 100, 50)];
+    [btn setTitle:@"X" forState:0];
+    [btn addTarget:self action:@selector(ChangeX:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+    UIButton *btn2=[[UIButton alloc]initWithFrame:CGRectMake(200, 100, 100, 50)];
+    [btn2 setTitle:@"Y" forState:0];
+    [btn2 addTarget:self action:@selector(changeY:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn2];
 }
 - (void)setup{
     
     //启用顶点缓存渲染操作
-    glEnableVertexAttribArray(GLKVertexAttribPosition);
-    //3是步长  每3个数字是一组数据 GL_FLOAT是数据类型 GL_FALSE小数位置是否可变
-    //   sizeof(ScenVertex)是每一组数据的内存长度 NULL是从当前顶点开始
+    glEnableVertexAttribArray(_p);
     //顶点渲染
-    glVertexAttribPointer(GLKVertexAttribPosition,
+    glVertexAttribPointer(_p,
                           3,
                           GL_FLOAT, GL_FALSE,
                           sizeof(SceneVertex2),
                           NULL + offsetof(SceneVertex2, positionCoords));//NULL从当前绑定的顶点缓存的开始位置访问顶点数据
     //颜色
-    glEnableVertexAttribArray(GLKVertexAttribColor);
-    glVertexAttribPointer(GLKVertexAttribColor, 4, GL_FLOAT, GL_FALSE, sizeof(SceneVertex2), NULL+offsetof(SceneVertex2, textureCoords));
+    glEnableVertexAttribArray(_Color);
+    glVertexAttribPointer(_Color, 4, GL_FLOAT, GL_FALSE,
+                          sizeof(SceneVertex2),
+                          NULL+offsetof(SceneVertex2, textureCoords));
     //纹理渲染
     glEnableVertexAttribArray(GLKVertexAttribTexCoord0);
     glVertexAttribPointer(GLKVertexAttribTexCoord0, 2, GL_FLOAT, GL_FALSE, sizeof(SceneVertex2), NULL+offsetof(SceneVertex2, vector));
-    
 }
 -(void)glkView:(GLKView *)view drawInRect:(CGRect)rect{
     [self.baseEffect prepareToDraw];//
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);//清除背景
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);    
     
-    
-//    glUseProgram(program);
-    
-//    GLuint transformUniformLocation = glGetUniformLocation(program, "change");
-//    glUniformMatrix4fv(transformUniformLocation, 1, 0, transformMatrix.m);
-
+    [self update];
     [self draw];
 }
 - (void)update{
-    value += 0.1;
-    if (value > 1) {
-        value -= 1;
+    
+    glUseProgram(program); //声明使用的program
+    GLuint variable= glGetUniformLocation(program, "valueChange");
+    glUniform1f(variable,(CGFloat)self.changeValue);
+//    GLuint variable2= glGetUniformLocation(program, "SourceColor2");
+//    float s = sin(self.changeValue);
+//    glUniform4f(variable2, s, 1-s, fabsf(s-1), s);
+    
+    if (is_rotate_x) {
+        ksRotate(&_transformMatrix, self.changeValue, 0, 1, 0);
     }
-    // 旋转
-//    GLKMatrix4 rotateMatrix = GLKMatrix4MakeRotation(value , 0, 0, 0.0);
+    if (is_rotate_y) {
+        ksRotate(&_transformMatrix, self.changeValue, 1, 0, 0);
+    }
     
-    // 平移
-//    GLKMatrix4 translateMatrix = GLKMatrix4MakeTranslation(0, 0, -3.0);
+    //maritx
     
-    // 透视投影
-    float aspect = self.view.frame.size.width / self.view.frame.size.height;
-    GLKMatrix4 perspectiveMatrix = GLKMatrix4MakePerspective(GLKMathDegreesToRadians(90), aspect, 0.1, 20.0);
-    // GLKMathDegreesToRadians(90) 是将角度转为弧度
-    transformMatrix = perspectiveMatrix;
-    //    translateMatrix = GLKMatrix4Multiply(perspectiveMatrix, translateMatrix);
+    GLuint mar = glGetUniformLocation(program, "maritx");
+    glUniformMatrix4fv(mar, 1, GL_FALSE,
+                       (GLfloat *)&_transformMatrix.m[0][0]);
+    
 }
 - (void)draw{
-    //渲染
-    GLuint count = sizeof(vertices2)/sizeof(SceneVertex2);
-    glDrawArrays(GL_TRIANGLE_STRIP, 0/*顶点的位置*/, count/*顶点数量*/);
+       static  int indexs[] = {
+           //底部
+           0,1,2,
+           0,2,3,
+           
+            0,1,4,
+            1,2,4,
+            2,3,4,
+            3,0,4,
+        };
+    GLint count = sizeof(indexs)/sizeof(int);
+    glDrawElements(GL_TRIANGLE_FAN, count, GL_UNSIGNED_INT, &indexs[0]);
 }
 - (void)uploadTexture{
     UIImage *image=[UIImage imageNamed:@"2.jpg"];
@@ -161,12 +205,13 @@ static const SceneVertex2 vertices2[] = {
  创建着色器并链接到坐标上
  */
 - (void)compileShader{
-    GLuint certex=[self compileShader:@"vertexchange" withType:GL_VERTEX_SHADER];
-    GLuint fragmentShader=[self compileShader:@"f2" withType:GL_FRAGMENT_SHADER];
+    GLuint certex=[self compileShader:kShaderVertexChangeName withType:GL_VERTEX_SHADER];
+    GLuint fragmentShader=[self compileShader:kShaderVertexFName withType:GL_FRAGMENT_SHADER];
     GLuint programHandle= glCreateProgram();
     program = programHandle;
     glAttachShader(programHandle, certex);
     glAttachShader(programHandle, fragmentShader);
+    glBindAttribLocation(programHandle, GLKVertexAttribPosition, "Position");
     
     glLinkProgram(programHandle);
     
@@ -182,6 +227,17 @@ static const SceneVertex2 vertices2[] = {
         exit(1);
     }
     glUseProgram(programHandle);
-    glGetAttribLocation(programHandle, "Position");
+   _p = glGetAttribLocation(programHandle, "Position");
+    glEnableVertexAttribArray(_p);
+    _Color = glGetAttribLocation(programHandle, "SourceColor");
+    glEnableVertexAttribArray(_Color);
+}
+- (IBAction)ChangeX:(id)sender {
+    is_rotate_x = !is_rotate_x;
+    is_rotate_y = NO;
+}
+- (IBAction)changeY:(id)sender {
+    is_rotate_y = !is_rotate_y;
+    is_rotate_x = NO;
 }
 @end

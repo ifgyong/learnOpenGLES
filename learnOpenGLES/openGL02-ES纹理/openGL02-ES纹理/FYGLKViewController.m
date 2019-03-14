@@ -43,7 +43,6 @@ static const SceneVertex2 vertices2[] = {
 };
 @implementation FYGLKViewController
 -(void)dealloc{
-    GLKView *view = (GLKView *)self.view;
     [EAGLContext setCurrentContext:nil];
     if (vertexBufferID !=0) {
         glDeleteBuffers(1, &vertexBufferID);
