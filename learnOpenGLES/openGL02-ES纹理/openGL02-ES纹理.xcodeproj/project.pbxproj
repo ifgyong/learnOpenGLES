@@ -10,6 +10,8 @@
 		A5A826D0223935E300482A81 /* vertexchange2.glsl in Resources */ = {isa = PBXBuildFile; fileRef = A5A826CF223935E200482A81 /* vertexchange2.glsl */; };
 		EE491D8D223A15800061D8E8 /* vertexchange4.glsl in Resources */ = {isa = PBXBuildFile; fileRef = EE491D8C223A15800061D8E8 /* vertexchange4.glsl */; };
 		EE491D97223A49DF0061D8E8 /* FYGLKViewController5.m in Sources */ = {isa = PBXBuildFile; fileRef = EE491D95223A49DF0061D8E8 /* FYGLKViewController5.m */; };
+		EE491D9A223B2E130061D8E8 /* FYGLKEffectsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE491D99223B2E130061D8E8 /* FYGLKEffectsViewController.m */; };
+		EE491D9C223B308E0061D8E8 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = EE491D9B223B308E0061D8E8 /* 3.png */; };
 		EE6C4F872237713D00756D55 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6C4F862237713D00756D55 /* AppDelegate.m */; };
 		EE6C4F8A2237713D00756D55 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EE6C4F892237713D00756D55 /* ViewController.m */; };
 		EE6C4F8D2237713D00756D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE6C4F8B2237713D00756D55 /* Main.storyboard */; };
@@ -39,6 +41,9 @@
 		EE491D8C223A15800061D8E8 /* vertexchange4.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = vertexchange4.glsl; sourceTree = "<group>"; };
 		EE491D95223A49DF0061D8E8 /* FYGLKViewController5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FYGLKViewController5.m; sourceTree = "<group>"; };
 		EE491D96223A49DF0061D8E8 /* FYGLKViewController5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FYGLKViewController5.h; sourceTree = "<group>"; };
+		EE491D98223B2E130061D8E8 /* FYGLKEffectsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FYGLKEffectsViewController.h; sourceTree = "<group>"; };
+		EE491D99223B2E130061D8E8 /* FYGLKEffectsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FYGLKEffectsViewController.m; sourceTree = "<group>"; };
+		EE491D9B223B308E0061D8E8 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
 		EE6C4F822237713D00756D55 /* openGL02-ES纹理.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "openGL02-ES纹理.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE6C4F852237713D00756D55 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		EE6C4F862237713D00756D55 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -111,6 +116,7 @@
 				EE88E1232239E94300F9704A /* Utils */,
 				EE6C4FA52237727000756D55 /* 1.png */,
 				EE6C4FB42237A04800756D55 /* 2.jpg */,
+				EE491D9B223B308E0061D8E8 /* 3.png */,
 				EE6C4F852237713D00756D55 /* AppDelegate.h */,
 				EE6C4F862237713D00756D55 /* AppDelegate.m */,
 				EE6C4F882237713D00756D55 /* ViewController.h */,
@@ -128,6 +134,8 @@
 				EE88E11D2238FD5100F9704A /* FYGLKViewController4.m */,
 				EE491D96223A49DF0061D8E8 /* FYGLKViewController5.h */,
 				EE491D95223A49DF0061D8E8 /* FYGLKViewController5.m */,
+				EE491D98223B2E130061D8E8 /* FYGLKEffectsViewController.h */,
+				EE491D99223B2E130061D8E8 /* FYGLKEffectsViewController.m */,
 				EE88E10D2238AA4400F9704A /* vertex.glsl */,
 				EE88E1112238D49C00F9704A /* vertexchange.glsl */,
 				A5A826CF223935E200482A81 /* vertexchange2.glsl */,
@@ -225,6 +233,7 @@
 				EE88E1172238D5C800F9704A /* f2.glsl in Resources */,
 				EE6C4F922237713F00756D55 /* LaunchScreen.storyboard in Resources */,
 				EE88E1102238AF6000F9704A /* f.glsl in Resources */,
+				EE491D9C223B308E0061D8E8 /* 3.png in Resources */,
 				EE6C4FA62237727100756D55 /* 1.png in Resources */,
 				EE491D8D223A15800061D8E8 /* vertexchange4.glsl in Resources */,
 				EE6C4FB52237A04800756D55 /* 2.jpg in Resources */,
@@ -246,6 +255,7 @@
 				EE88E1152238D4EC00F9704A /* FYGLKViewController3.m in Sources */,
 				EE88E12A2239E94300F9704A /* GLESUtils.m in Sources */,
 				EE88E12B2239E94300F9704A /* GLESMath.c in Sources */,
+				EE491D9A223B2E130061D8E8 /* FYGLKEffectsViewController.m in Sources */,
 				EE88E10922389C7A00F9704A /* FYGLKViewController2.m in Sources */,
 				EE88E1222239094B00F9704A /* NSObject+FY.m in Sources */,
 				EE6C4F9D2237717400756D55 /* FYGLKViewController.m in Sources */,
